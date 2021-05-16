@@ -1,0 +1,39 @@
+.content {
+    margin-top: 66px;
+    display: flex;
+    width: 100%;
+    padding: 0px 10%;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.sec {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.sec div {
+    padding-left: 70px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.sec div:last-child {
+    direction: rtl;
+}
+
+.sec div p {
+    width: 60%;
+    margin-right: 30px;
+}
+
+.sec div img {
+    width: 40%;
+}
+
+.sec div:last-child p {
+    margin-right: 0px;
+    margin-left: 30px;
+}

@@ -26,10 +26,10 @@ function Index() {
         <>
             <Navbar ref={navbar_ref} color={inView ? 0 : 1} />
             <Header refe={ref} />
-            <div className={styles['content']} >                
+            <div className={styles['content']} >
                 <SearchBar searchTxt='Que estas buscando' />
                 <section>
-                    <CardTxtImg title={` ${inView} ${entry} Conoce Barranquilla Colombia`}
+                    <CardTxtImg title='Conoce Barranquilla Colombia'
                         content={`Barranquilla ( español americano:  [baraŋˈkiʝa]) es el distrito capital del departamento de Atlántico en Colombia .
                         Está ubicada cerca del Mar Caribe y es la ciudad más grande y el tercer puerto en la región de la Costa Caribe Norte;
                         en 2018 tenía una población de 1.206.319, lo que la convierte en la cuarta ciudad más poblada de Colombia después de Bogotá ,

@@ -72,5 +72,6 @@ header {
     justify-content: space-between;
 }
 
-
-
+.sec-Gallery h2 {
+    margin-bottom: 40px;
+}

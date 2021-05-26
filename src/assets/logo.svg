@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196.3 196.3">
+    <title>lOGO</title>
+    <circle cx="98.15" cy="98.15" r="90.65" style="fill:#e8d296;stroke:#000;stroke-width:15px" />
+    <circle cx="98.15" cy="98.15" r="78.24" style="fill:#e8d296;stroke:#000;stroke-width:3px" />
+    <ellipse cx="98.15" cy="98.15" rx="52.86" ry="52.55" style="fill:#e8d296;stroke:#000;stroke-width:10px" />
+    <circle cx="98.15" cy="98.49" r="32.37" />
+    <path d="M125,94.18l2.1,5.68,5.29-3-2,5.7,6,1.1-5.22,3.06L135,111.4l-6-1,0,6.09-3.91-4.61-4,4.63,0-6-6,1,3.87-4.65-5.25-3.09,5.95-1.08-2-5.74,5.26,3Z" transform="translate(-26.85 -6.85)" style="fill:#e8d296;stroke:#e8d296;stroke-linecap:round;stroke-width:5px" />
+    <polyline points="104.29 42.33 96.92 25.13 92.01 42.33" style="fill:#020000" />
+    <polyline points="116.26 44.45 111.64 26.31 104.12 42.55" style="fill:#020000" />
+    <polyline points="127.6 50.17 128.15 31.46 116.46 45" style="fill:#020000" />
+    <polyline points="137.57 57.12 141 38.72 127.36 50.29" />
+    <polyline points="144.75 66.6 153.43 50.02 136.99 57.07" style="fill:#020000" />
+    <polyline points="150.67 77.21 161.81 62.17 144.48 66.6" style="fill:#020000" />
+    <polyline points="154.21 89.62 169.06 78.23 151.18 77.72" style="fill:#020000" />
+    <polyline points="155.12 101.74 171.55 92.78 153.96 89.51" style="fill:#020000" />
+    <polyline points="80.23 44.45 84.86 26.31 92.37 42.55" style="fill:#020000" />
+    <polyline points="68.89 50.17 68.34 31.46 80.04 45" style="fill:#020000" />
+    <polyline points="58.92 57.12 55.49 38.72 69.14 50.29" style="fill:#020000" />
+    <polyline points="51.74 66.6 43.06 50.02 59.5 57.07" style="fill:#020000" />
+    <polyline points="45.82 77.21 34.68 62.17 52.02 66.6" style="fill:#020000" />
+    <polyline points="42.28 89.62 27.43 78.23 45.31 77.72" style="fill:#020000" />
+    <polyline points="41.37 101.74 24.94 92.78 42.53 89.51" style="fill:#020000" />
+    <polyline points="109.12 153.23 103.43 171.06 96.89 154.41" style="fill:#020000" />
+    <polyline points="120.83 149.98 117.97 168.47 108.93 153.04" style="fill:#020000" />
+    <polyline points="131.56 144.01 133.91 162.58 120.97 150.22" style="fill:#020000" />
+    <polyline points="140.82 136.13 146.01 154.12 131.31 143.91" style="fill:#020000" />
+    <polyline points="147.05 126.01 157.29 141.67 140.25 136.23" style="fill:#020000" />
+    <polyline points="151.93 114.87 164.46 128.77 146.78 126.03" style="fill:#020000" />
+    <polyline points="154.26 102.18 170.14 112.09 152.39 114.33" style="fill:#020000" />
+    <polyline points="84.66 153.24 89.74 171.25 96.84 154.83" style="fill:#020000" />
+    <polyline points="72.54 148.56 74.16 167.2 84.21 152.4" style="fill:#020000" />
+    <polyline points="62.57 142.44 59.59 160.91 72.95 149.01" style="fill:#020000" />
+    <polyline points="54.07 134.15 47.48 151.67 62.93 142.66" style="fill:#020000" />
+    <polyline points="48.52 124.73 37.76 140.05 54.97 135.19" style="fill:#020000" />
+    <polyline points="43.21 113.44 30.21 126.91 47.97 124.77" style="fill:#020000" />
+    <polyline points="42.13 100.68 25.92 110.04 43.59 112.88" style="fill:#020000" />
+</svg>

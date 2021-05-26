@@ -3,3 +3,8 @@
     height: 514px;
     object-fit: cover;
 }
+.control-div{
+    background-color: black;
+    display: flex;
+    border-radius: 50px;
+}

@@ -1,0 +1,29 @@
+.container {
+    margin-top: 100px;
+    text-align: left;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+}
+
+.bg-black {
+    background-color: #272525;
+    color: white;
+}
+
+.container-text {
+    width: 65%;
+    margin: 60px;
+}
+
+.container img {
+    width: 40%;
+    border-radius: 0 15px 15px 0;
+    object-fit: cover;
+}
+
+.container-text h2 {
+    margin-bottom: 45px;
+}

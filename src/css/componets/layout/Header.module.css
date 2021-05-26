@@ -1,0 +1,18 @@
+.header-message{
+    height: 100%;
+    width: 70%;
+    color: black;
+    padding-left: 100px;
+    text-align: left;    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-message h2{    
+    width: 499px;
+    font-size: 48px;  
+      
+}
+.header-message img{
+    width: 183.5px;
+}

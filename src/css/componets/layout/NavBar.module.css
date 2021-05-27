@@ -60,3 +60,10 @@
 .rounded-btn:hover {
     opacity: 80%;
 }
+.search-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+}
+

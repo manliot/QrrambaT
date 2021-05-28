@@ -10,7 +10,9 @@ function NavBar({ color, type }) {
 
     return (
         <div className={`${styles['container']} ${color === 1 ? styles['color'] : ''}`}>
-            <img src={Logo} className={styles['logo-img']} alt='icono de qrramba' />
+            <Link to="/">
+                <img src={Logo} className={styles['logo-img']} alt='icono de qrramba' />
+            </Link>
             { type === 'search'
                 ? <div className={styles['search-container']}>
                     <SearchBar searchTxt='Que estas buscando' />

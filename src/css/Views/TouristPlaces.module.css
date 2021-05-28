@@ -27,9 +27,9 @@
 .column-one {
     background-color: beige;
     width: 60%;
+    overflow: scroll;
 }
 
-.column-two {
-    
+.column-two {    
     width: 40%;
 }

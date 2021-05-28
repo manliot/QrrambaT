@@ -1,6 +1,7 @@
 import styles from '../../css/Views/TouristPlaces.module.css'
 import Navbar from '../../components/layout/NavBar'
 import SearchBar from '../../components/common/SearchBar'
+
 import Map from '../../components/layout/Maps'
 
 import { useInView } from 'react-intersection-observer';

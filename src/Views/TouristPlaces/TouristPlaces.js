@@ -15,7 +15,7 @@ const TouristPlaces = () => {
 
     return (
         <div className={styles['container']}>
-            <Navbar type={`${inView ? '' : 'search'}`} />
+            <Navbar selected={1} type={`${inView ? '' : 'search'}`} />
             <header className={styles['header']}>
                 <div ref={ref} className={styles['search-container']}>
                     {inView &&

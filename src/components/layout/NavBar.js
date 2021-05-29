@@ -4,18 +4,27 @@ import Logo from '../../assets/logo.svg'
 import SearchBar from '../common/SearchBar'
 import { useContext } from 'react'
 import { Context } from '../../context/StaticContext'
+import { LoginWithGoogle } from '../../firebase/services/GoogleAuth'
 
 function NavBar({ color, type, selected }) {
     const contextAuth = useContext(Context)
 
-    const login = () => {
-        const user = {
-            id: 1,
-            name: 'Luisito Comunica',
-            username: 'elpillo',
-            profile_pic: 'https://www.elcomercio.com/wp-content/uploads/2021/05/luisitocomunica.jpg'
-        }
-        contextAuth.login(user)
+    const login = async () => {
+        LoginWithGoogle()
+            .then(({ user, token }) => {
+
+                const userLogged = {
+                    id: 1,
+                    name: user.displayName,
+                    email: user.email,
+                    username: 'elpillo',
+                    profile_pic: user.photoURL
+                }
+                contextAuth.login(userLogged)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
     const logout = () => {
         contextAuth.logout()

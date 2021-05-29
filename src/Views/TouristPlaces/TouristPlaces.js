@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 
 const TouristPlaces = () => {
 
-    const { ref, inView, entry } = useInView({
+    const { ref, inView, /* entry */ } = useInView({
         rootMargin: '-150px',
         /* threshold: 0.5, */
     });

@@ -73,7 +73,7 @@ function NavBar({ color, type, selected }) {
                             >
                                 <span>+</span>
                             </Link>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><Link class="dropdown-item" href="#">Agregar nuevo sitio turistico</Link></li>
                                 <li><Link class="dropdown-item" href="#">Agregar evento cultural</Link></li>
                             </ul>
@@ -85,6 +85,7 @@ function NavBar({ color, type, selected }) {
                                 <img
                                     src={contextAuth.user.profile_pic}
                                     className={styles['user-pic']}
+                                    alt="foto de perfil"
                                 />
                             </Link>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">

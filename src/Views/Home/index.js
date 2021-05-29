@@ -17,7 +17,7 @@ import CardGallery from '../../components/common/Card_gallery'
 
 function Index() {
     const navbar_ref = useRef(null)
-    const { ref, inView, entry } = useInView({
+    const { ref, inView, /* entry */ } = useInView({
         rootMargin: '-125px',
         threshold: 1,
     });

@@ -5,22 +5,32 @@ import SearchBar from '../common/SearchBar'
 import { useContext } from 'react'
 import { Context } from '../../context/StaticContext'
 import { LoginWithGoogle } from '../../firebase/services/GoogleAuth'
+import { db } from '../../firebase/firebase_config'
 
 function NavBar({ color, type, selected }) {
     const contextAuth = useContext(Context)
 
     const login = async () => {
         LoginWithGoogle()
-            .then(({ user, token }) => {
+            .then(({ user, isNewUser, token }) => {
 
                 const userLogged = {
-                    id: 1,
+                    id: user.uid,
                     name: user.displayName,
                     email: user.email,
-                    username: 'elpillo',
+                    phone: user.phoneNumber,
                     profile_pic: user.photoURL
                 }
                 contextAuth.login(userLogged)
+                if (isNewUser) {//saved in db
+                    db.collection('users').doc(user.uid).set(userLogged)
+                        .then((res) => {
+                            console.log("hola", res);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        })
+                }
             })
             .catch((err) => {
                 console.log(err)
@@ -89,6 +99,8 @@ function NavBar({ color, type, selected }) {
                                 />
                             </Link>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><span class="dropdown-item">{contextAuth.user.name}  </span> </li>
+                                <br class="primary"></br>
                                 <li><Link class="dropdown-item" href="#">Perfil</Link></li>
                                 <li><Link onClick={logout} class="dropdown-item" href="#">Cerrar Sesion</Link></li>
                             </ul>

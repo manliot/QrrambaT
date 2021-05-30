@@ -7,15 +7,16 @@ export const LoginWithGoogle = async () => {
 
     const user = await new Promise(async (resolve, reject) => {
         await firebase.auth().signInWithPopup(GoogleAuthProvider)
-            .then((result) => {                
+            .then((result) => {
                 const credential = result.credential;
 
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
-
-                resolve({ user, token });
+                const isNewUser = result.additionalUserInfo.isNewUser
+                console.log(result)
+                resolve({ user,isNewUser, token });
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;

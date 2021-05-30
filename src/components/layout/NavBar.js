@@ -84,7 +84,7 @@ function NavBar({ color, type, selected }) {
                                 <span>+</span>
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><Link class="dropdown-item" href="#">Agregar nuevo sitio turistico</Link></li>
+                                <li><Link class="dropdown-item" to="/new-place">Agregar nuevo sitio turistico</Link></li>
                                 <li><Link class="dropdown-item" href="#">Agregar evento cultural</Link></li>
                             </ul>
                         </div>

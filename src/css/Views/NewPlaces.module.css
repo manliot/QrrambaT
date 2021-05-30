@@ -1,0 +1,22 @@
+.container {
+    padding-top: 130px;
+}
+
+.img-logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.images {
+    width: 150px;
+}
+
+.input-file {
+    display: none;
+}
+
+.btn-file{
+    background-color: #f2b936 ;
+    border-radius: 100px;
+}

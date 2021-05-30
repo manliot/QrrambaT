@@ -1,11 +1,13 @@
 import Routes from './routes/index.js'
 import './App.css';
-
+import {ContextProvider} from './context/StaticContext'
 function App() {
   return (
-    <div className="App">
-      <Routes />
-    </div>
+    <ContextProvider>
+      <div className="App">
+        <Routes />
+      </div>
+    </ContextProvider>
   )
 
 }

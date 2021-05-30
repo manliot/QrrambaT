@@ -1,18 +1,35 @@
-.header-message{
+.header {
+    width: 100%;
+    height: 623px;
+    background: url('../../../assets/Bg_limpio.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.header-message {
     height: 100%;
     width: 70%;
     color: black;
     padding-left: 100px;
-    text-align: left;    
+    text-align: left;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.header-message h2{    
+
+.header-message h2 {
     width: 499px;
-    font-size: 48px;  
-      
+    font-size: 48px;
 }
-.header-message img{
+
+.header-message .logo {
     width: 183.5px;
+}
+.header-woman{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 }

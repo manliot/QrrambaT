@@ -12,7 +12,7 @@
     color: black;
 }
 
-.color{
+.dark {
     background-color: #272525;
     color: white;
 }
@@ -25,13 +25,46 @@
     justify-content: flex-end;
 }
 
+.link-container div {
+    text-align: center;
+    margin-left: 25px;
+    margin-top:4px
+}
+
 .link {
     color: inherit;
     text-decoration: none;
-    margin-left: 25px;
     font-weight: 100;
 }
 
+.link-new {
+    margin-left: 0px;
+    margin-right: 20px;
+    border-width: 1px;
+    color: white;
+    background-color: #272525;
+    padding: 1px 10px;
+    border-radius: 15px 5px 15px 5px;
+    font-size: 1.3em;
+}
+
+.yellow {
+    color: black;
+    background-color: #F2B936;
+}
+
+.hr {
+    margin: 0 auto;
+    border-width: 2px;
+    border-style: solid;
+    width: 27px;
+    color: inherit;
+    border-radius:50px
+
+}
+.hide{
+    opacity: 0;
+}
 .link:hover {
     opacity: 60%;
     color: black;
@@ -42,10 +75,16 @@
     fill: #e8d296;
 }
 
+.user-section {
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .rounded-btn {
     color: #353636;
     text-decoration: none;
-    margin-left: 30px;
     background-color: #F2B936;
     height: 33px;
     width: 149px;
@@ -59,4 +98,21 @@
 
 .rounded-btn:hover {
     opacity: 80%;
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+}
+
+.user-pic {
+    width: 52px;
+    height: 52px;
+    border-radius: 50px;
+    object-fit: cover;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
 }

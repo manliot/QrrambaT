@@ -47,7 +47,7 @@ const TouristPlaces = () => {
             <header className={styles['header']}>
                 <div ref={ref} className={styles['search-container']}>
                     {inView &&
-                        <SearchBar searchTxt='Que estas buscando' />
+                        <SearchBar searchTxt='Que lugar estas buscando' />
                     }
                 </div>
             </header>

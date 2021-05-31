@@ -4,6 +4,9 @@ import Home from '../Views/Home'
 import Login from '../Views/Login'
 import TouristPlaces from '../Views/TouristPlaces/TouristPlaces'
 import NewPlace from '../Views/NewPlace/NewPlace'
+
+import PlaceDetails from '../Views/PlaceDetails/PlaceDetails'
+
 import Events from '../Views/Events'
 import { Context } from '../context/StaticContext'
 
@@ -13,13 +16,14 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path='/login' component={Login}/>
-        <Route exact path='/places' component={TouristPlaces}/>
-        <Route exact path='/events' component={Events}/>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/places' component={TouristPlaces} />
+        <Route exact path='/events' component={Events} />
         <Route exact path='/new-place'>
           {AuthContext.user ? <NewPlace /> : <Redirect to='/' />}
         </Route>
+        <Route exact path='/place-details' component={PlaceDetails} />
       </Switch>
     </BrowserRouter>
   );

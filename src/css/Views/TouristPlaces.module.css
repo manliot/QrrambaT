@@ -30,6 +30,11 @@
     overflow: scroll;
 }
 
-.column-two {    
+.column-one::-webkit-scrollbar::-webkit-scrollbar-track {
+    background: blue;
+    border-radius: 10px;
+}
+
+.column-two {
     width: 40%;
 }

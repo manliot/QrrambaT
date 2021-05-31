@@ -14,6 +14,7 @@ export const ContextProvider = ({ children }) => {
                 },
                 logout: () => {
                     setUser(null)
+                    alert("Operacion exitosa")
                 }
             }}
         >

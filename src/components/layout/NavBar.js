@@ -4,18 +4,37 @@ import Logo from '../../assets/logo.svg'
 import SearchBar from '../common/SearchBar'
 import { useContext } from 'react'
 import { Context } from '../../context/StaticContext'
+import { LoginWithGoogle } from '../../firebase/services/GoogleAuth'
+import { db } from '../../firebase/firebase_config'
 
 function NavBar({ color, type, selected }) {
     const contextAuth = useContext(Context)
 
-    const login = () => {
-        const user = {
-            id: 1,
-            name: 'Luisito Comunica',
-            username: 'elpillo',
-            profile_pic: 'https://www.elcomercio.com/wp-content/uploads/2021/05/luisitocomunica.jpg'
-        }
-        contextAuth.login(user)
+    const login = async () => {
+        LoginWithGoogle()
+            .then(({ user, isNewUser, token }) => {
+
+                const userLogged = {
+                    id: user.uid,
+                    name: user.displayName,
+                    email: user.email,
+                    phone: user.phoneNumber,
+                    profile_pic: user.photoURL
+                }
+                contextAuth.login(userLogged)
+                if (isNewUser) {//saved in db
+                    db.collection('users').doc(user.uid).set(userLogged)
+                        .then((res) => {
+                            console.log("hola", res);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        })
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
     const logout = () => {
         contextAuth.logout()
@@ -64,8 +83,8 @@ function NavBar({ color, type, selected }) {
                             >
                                 <span>+</span>
                             </Link>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><Link class="dropdown-item" href="#">Agregar nuevo sitio turistico</Link></li>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><Link class="dropdown-item" to="/new-place">Agregar nuevo sitio turistico</Link></li>
                                 <li><Link class="dropdown-item" href="#">Agregar evento cultural</Link></li>
                             </ul>
                         </div>
@@ -76,9 +95,12 @@ function NavBar({ color, type, selected }) {
                                 <img
                                     src={contextAuth.user.profile_pic}
                                     className={styles['user-pic']}
+                                    alt="foto de perfil"
                                 />
                             </Link>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><span class="dropdown-item">{contextAuth.user.name}  </span> </li>
+                                <br class="primary"></br>
                                 <li><Link class="dropdown-item" href="#">Perfil</Link></li>
                                 <li><Link onClick={logout} class="dropdown-item" href="#">Cerrar Sesion</Link></li>
                             </ul>

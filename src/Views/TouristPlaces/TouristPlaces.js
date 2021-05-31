@@ -24,7 +24,7 @@ const TouristPlaces = () => {
                 </div>
             </header>
             <div className={styles['two-columns']}>
-                <section className={styles['column-one']}>
+            <section className={styles['column-one']}>
                     <h2>Aqui va el compónente de los sitios</h2>
                     <h2>Aqui va el compónente de los sitios</h2>
                     <h2>Aqui va el compónente de los sitios</h2>
@@ -46,7 +46,7 @@ const TouristPlaces = () => {
 
                 </section>
                 <section className={styles['column-two']}>
-                    <Map />
+                    <Map/>
                 </section>
             </div>
         </div>

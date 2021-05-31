@@ -1,0 +1,40 @@
+.container {
+    padding: 0px;
+    margin: 0px;
+}
+
+.sec-div {
+    padding: 0px;
+    margin: 0px;
+}
+
+.img-prin {
+    height: 378px;
+    width: 100%;
+    border-radius: 20px 0 0 20px;
+}
+
+.img-sec {
+    height: 184px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.img-last-row1 {
+    border-radius: 0 20px 0 0;
+}
+
+.prin-container {
+    padding: 0px;
+    padding-right: 11px;
+}
+
+.sec-container {
+    padding: 0px;
+    padding-right: 11px;
+    padding-bottom: 11px;
+}
+
+.img-last-row2 {
+    border-radius: 0 0 20px 0;
+}

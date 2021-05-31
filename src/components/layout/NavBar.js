@@ -56,7 +56,7 @@ function NavBar({ color, type, selected }) {
                         <hr className={`${styles['hr']} ${selected !== 1 ? styles['hide'] : ''}`} />
                     </div>
                     <div>
-                        <Link to="#" className={styles['link']}>Eventos Culturales</Link>
+                        <Link to="/events" className={styles['link']}>Eventos Culturales</Link>
                         <hr className={`${styles['hr']} ${selected !== 2 ? styles['hide'] : ''}`} />
                     </div>
                     <div>

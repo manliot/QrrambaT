@@ -7,7 +7,13 @@ import Map from '../../components/layout/Maps'
 import { useInView } from 'react-intersection-observer';
 
 const TouristPlaces = () => {
-
+    const initial = {
+        center: {
+            lat: 10.86,
+            lng: -74.77
+        },
+        zoom: 100
+    }
     const { ref, inView, /* entry */ } = useInView({
         rootMargin: '-150px',
         /* threshold: 0.5, */
@@ -24,7 +30,7 @@ const TouristPlaces = () => {
                 </div>
             </header>
             <div className={styles['two-columns']}>
-            <section className={styles['column-one']}>
+                <section className={styles['column-one']}>
                     <h2>Aqui va el compónente de los sitios</h2>
                     <h2>Aqui va el compónente de los sitios</h2>
                     <h2>Aqui va el compónente de los sitios</h2>
@@ -46,7 +52,7 @@ const TouristPlaces = () => {
 
                 </section>
                 <section className={styles['column-two']}>
-                    <Map/>
+                    <Map initial={initial} />
                 </section>
             </div>
         </div>

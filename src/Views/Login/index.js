@@ -1,11 +1,11 @@
-
+import Map from '../../components/layout/Maps'
 
 
 
 function index() {
     return (
         <div>
-            <h2>Login</h2>
+            <Map></Map>
         </div>
     )
 }

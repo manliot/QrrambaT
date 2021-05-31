@@ -14,4 +14,17 @@ const getPlacebyId = async (id) => {
     return Place_
 }
 
-export { getPlacebyId }
+const getAllPlaces = async () => {
+    let Places_ = []
+    const Places = await db.collection('Places').get()
+
+    if (Places.empty) {
+        console.log('no matching documents')
+    }
+    Places.forEach(doc => {
+        Places_.push(doc.data())
+    })
+    return Places_
+}
+
+export { getPlacebyId, getAllPlaces }

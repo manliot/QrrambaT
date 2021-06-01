@@ -64,12 +64,16 @@ function NavBar({ color, type, selected }) {
                         <hr className={`${styles['hr']} ${selected !== 3 ? styles['hide'] : ''}`} />
                     </div>
                     <div>
+                        <Link to="/thingstodo" className={styles['link']}>Qué hacer</Link>
+                        <hr className={`${styles['hr']} ${selected !== 4 ? styles['hide'] : ''}`} />
+                    </div>
+                    <div>
                         <Link className={styles['link']}>Noticias</Link>
-                        <hr className={`${styles['hr']} ${selected !== 4 ? styles['hide'] : ''} `} />
+                        <hr className={`${styles['hr']} ${selected !== 5 ? styles['hide'] : ''} `} />
                     </div>
                     <div>
                         <Link className={styles['link']}>Comunidad</Link>
-                        <hr className={`${styles['hr']} ${selected !== 5 ? styles['hide'] : ''} `} />
+                        <hr className={`${styles['hr']} ${selected !== 6 ? styles['hide'] : ''} `} />
                     </div>
                 </div>
             }

@@ -5,10 +5,13 @@ import Footer from "../../components/layout/Footer";
 import styles from "../../css/Views/Events.module.css";
 import CardEvent from "../../components/common/Card_event";
 import Bq from "../../assets/Barranquilla.jpeg";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 import { useInView } from "react-intersection-observer";
 
 const Events = () => {
+
   const { ref, inView /* entry */ } = useInView({
     rootMargin: "-150px",
     /* threshold: 0.5, */

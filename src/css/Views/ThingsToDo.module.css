@@ -1,0 +1,63 @@
+.container {
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 200px;
+  background: url("../../assets/Fondo\ limpio.jpg");
+  display: flex;
+  align-items: flex-end;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  background-color: beige;
+  padding: 60px;
+  margin:0px;
+}
+
+.subtitle {
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    background-color: beige;
+    padding-left: 70px;
+    margin: 0px;
+}
+
+.carousel-div {
+  display: flex;
+  justify-content: center;
+  background: beige;
+  height: 20%;
+}
+
+.carousel {
+  width: 80%;
+}
+
+.four-columns {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: beige;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.column {
+  background-color: beige;
+  width: 25%;
+  padding: 10px;
+}

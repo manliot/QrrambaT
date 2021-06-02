@@ -4,6 +4,7 @@ import Home from '../Views/Home'
 import Login from '../Views/Login'
 import TouristPlaces from '../Views/TouristPlaces/TouristPlaces'
 import NewPlace from '../Views/NewPlace/NewPlace'
+import TouristServices from '../Views/TouristServices/TouristServices'
 
 import PlaceDetails from '../Views/PlaceDetails/PlaceDetails'
 
@@ -20,6 +21,7 @@ const Routes = () => {
         <Route exact path='/login' component={Login} />
         <Route exact path='/places' component={TouristPlaces} />
         <Route exact path='/events' component={Events} />
+        <Route exact path='/services' component={TouristServices} />
         <Route exact path='/new-place'>
           {AuthContext.user ? <NewPlace /> : <Redirect to='/' />}
         </Route>

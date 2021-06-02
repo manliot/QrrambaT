@@ -13,6 +13,9 @@ const NewPlace = () => {
     const [address, setAddress] = useState('')
     const [web, setWeb] = useState('')
     const [del, setDel] = useState(false)
+    const [lat, setLat] = useState('')
+    const [lon, setLon] = useState('')
+    const [horas, setHoras] = useState('')
     const [card, setCard] = useState(false)
     const [description, setDescription] = useState('')
     const [progress, setProgress] = useState(0)
@@ -39,25 +42,21 @@ const NewPlace = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (name !== '' && type !== '...' && subtype !== '' && phone !== '' && address !== '' && description !== '' && iconURL !== '' && imagesURL['prin'] !== ('') && imagesURL['sec1'] !== ('') && imagesURL['sec2'] !== ('') && imagesURL['sec3'] !== ('') && imagesURL['sec4'] !== ('')) {
+
+        console.log({
+            address, lat, lon, horas, bioseg, card, del, description, iconURL, imagesURL, name, phone, services, subtype, type, web, creador: contextAuth.user.id
+        })
+        if (name !== '' && horas !== '' && type !== '...' && subtype !== '' && phone !== '' && address !== '' && lat !== '' && lon !== '' && description !== '' && iconURL !== '' && imagesURL['prin'] !== ('') && imagesURL['sec1'] !== ('') && imagesURL['sec2'] !== ('') && imagesURL['sec3'] !== ('') && imagesURL['sec4'] !== ('')) {
             const place = {
-                address,
-                bioseg,
-                card,
-                del,
-                description,
-                iconURL,
-                imagesURL,
-                name,
-                phone,
-                services,
-                subtype,
-                type,
-                web,
-                creador: contextAuth.user.id
+                address, lat, lon, horas, bioseg, card, del, description, iconURL, imagesURL, name, phone, services, subtype, type, web, creador: contextAuth.user.id
             }
             console.log("lugar a guardar : ", place)
             db.collection('Places').add(place)
+            .then(()=>{
+                alert('Se guardó correctamente')
+            })
+            .catch((e)=>alert('Error'))
+            
         } else {
             alert("debe llenar campos obligaorios e imagenes")
         }
@@ -152,6 +151,24 @@ const NewPlace = () => {
                                 <label for='phone' className={`col-2 col-form-label`}>Telefono <span className='text-danger'>*</span></label>
                                 <div className='col-3'>
                                     <input id='phone' onChange={event => setPhone(event.target.value)} className='form-control'></input>
+                                </div>
+                            </div>
+                            <div className="mb-3 row">
+                                <label for='lat' className={`col-2 col-form-label`}>Latitud <span className='text-danger'>*</span></label>
+                                <div className='col-3'>
+                                    <input id='lat' onChange={event => setLat(event.target.value)} className='form-control'></input>
+                                </div>
+                            </div>
+                            <div className="mb-3 row">
+                                <label for='lon' className={`col-2 col-form-label`}>Longitud <span className='text-danger'>*</span></label>
+                                <div className='col-3'>
+                                    <input id='lon' onChange={event => setLon(event.target.value)} className='form-control'></input>
+                                </div>
+                            </div>
+                            <div className="mb-3 row">
+                                <label for='ho' className={`col-2 col-form-label`}>Horario <span className='text-danger'>*</span></label>
+                                <div className='col-3'>
+                                    <input id='ho' onChange={event => setHoras(event.target.value)} className='form-control'></input>
                                 </div>
                             </div>
                             <div className="mb-3 row">

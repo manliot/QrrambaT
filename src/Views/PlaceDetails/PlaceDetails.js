@@ -5,8 +5,10 @@ import Styles from '../../css/Views/PlaceDetails.module.css'
 import { getPlacebyId } from '../../firebase/services/Firestorage'
 import Item_service from '../../components/common/Item_service'
 import Loadin_c from '../../components/common/Loading'
+import CardContactPlace from '../../components/common/ContactCardPlace'
 const defaulImg = 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg'
 const DefaultImgs = { prin: defaulImg, sec1: defaulImg, sec2: defaulImg, sec3: defaulImg, sec4: defaulImg }
+
 const PlaceDetails = ({ id_place = 'vbCDE7lfUj3YETnMSFLg' }) => {
 	const [Place, setPlace] = useState(null)
 	const [infoService, setInfoService] = useState(null)
@@ -87,7 +89,7 @@ const PlaceDetails = ({ id_place = 'vbCDE7lfUj3YETnMSFLg' }) => {
 											const service = Place.services[key]
 											if (service) {
 												return <div className='col-6'>
-													< Item_service iconURL={Place.iconURL}  title={key[0].toUpperCase()+key.slice(1)} content={'Si'} />
+													< Item_service iconURL={Place.iconURL} title={key[0].toUpperCase() + key.slice(1)} content={'Si'} />
 												</div>
 											}
 										})}
@@ -95,9 +97,9 @@ const PlaceDetails = ({ id_place = 'vbCDE7lfUj3YETnMSFLg' }) => {
 
 								</section>
 							</div>
-							<div className='col-6'>
-								HOLA1
-              </div>
+							<div className='col-6 container-fluid p-5'>
+								<CardContactPlace imgURL={Place.iconURL} score={score} n_reseñas={100} address={Place.address} phone={Place.phone} Web={"google.com"} />
+							</div>
 						</section>
 					</div>
 				</>

@@ -55,7 +55,7 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
         :
         <div className={styles['link-container']}>
           <div >
-            <Link to="/places" className={styles['link']}>Sitios</Link>
+            <Link to="/places" className={styles['link']}>Hoteles, restaunrante y lugares</Link>
             <hr className={`${styles['hr']} ${selected !== 1 ? styles['hide'] : ''}`} />
           </div>
           <div>
@@ -64,6 +64,10 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
           </div>
           <div>
             <Link to="#" className={styles['link']}>Servicios turisticos</Link>
+            <hr className={`${styles['hr']} ${selected !== 3 ? styles['hide'] : ''}`} />
+          </div>
+          <div>
+            <Link to="/thingstodo" className={styles['link']}>Cosas para hacer</Link>
             <hr className={`${styles['hr']} ${selected !== 3 ? styles['hide'] : ''}`} />
           </div>
           <div>
@@ -88,7 +92,8 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
               </Link>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><Link class="dropdown-item" to="/new-place">Agregar nuevo sitio turistico</Link></li>
-                <li><Link class="dropdown-item" href="#">Agregar evento cultural</Link></li>
+                <li><Link class="dropdown-item" href="/new-event">Agregar evento cultural</Link></li>
+                <li><Link class="dropdown-item" href="/new-event">Agregar un servicio</Link></li>
               </ul>
             </div>
             <div className="dropdown">

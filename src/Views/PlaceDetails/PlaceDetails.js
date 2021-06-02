@@ -1,45 +1,32 @@
-import { useState, useEffect } from 'react'
+
 import NavBar from '../../components/layout/NavBar'
 import Images from '../../components/common/ImagesPlaces'
 import Styles from '../../css/Views/PlaceDetails.module.css'
-import { getPlacebyId } from '../../firebase/services/Firestorage'
 import Item_service from '../../components/common/Item_service'
 import Loadin_c from '../../components/common/Loading'
 import CardContactPlace from '../../components/common/ContactCardPlace'
-const defaulImg = 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg'
-const DefaultImgs = { prin: defaulImg, sec1: defaulImg, sec2: defaulImg, sec3: defaulImg, sec4: defaulImg }
 
-const PlaceDetails = ({ id_place = 'vbCDE7lfUj3YETnMSFLg' }) => {
-	const [Place, setPlace] = useState(null)
-	const [infoService, setInfoService] = useState(null)
+
+const PlaceDetails = ({ location }) => {
+	const Place = location.state.Place
+	console.log(location.state.Place)
 	const score = 4.8
 	const cant_reseñ = 1200
-	const [keys, setkeys] = useState(null)
-	useEffect(() => {
-		const fetchData = async () => {
-			const PlaceRes = await getPlacebyId(id_place)
-			console.log(Object.keys(PlaceRes.services))
-			setkeys(Object.keys(PlaceRes.services))
-			const bioseg_txt = `Se requiere de ${PlaceRes.bioseg['alcohol'] ? 'alcohol' : ''} • ${PlaceRes.bioseg['mascarilla'] ? 'mascarilla' : ''} • ${PlaceRes.bioseg['temp'] ? 'tomar la temperatura' : ''}  `
-			const info = [{
-				title: 'Horario de servicio',
-				content: PlaceRes.hours
-			},
-			{
-				title: 'Bioseguridad',
-				content: bioseg_txt
-			},
-			{
-				title: 'Domicilio',
-				content: `${PlaceRes.del ? 'Si' : 'No'}`
-			}
+	const BiosegTxt = `Se requiere de ${Place.bioseguridad[0] ? 'Mascarilla' : ''} • ${Place.bioseguridad[1] ? 'alcohol' : ''} • ${Place.bioseguridad[2] ? 'tomar la temperatura' : ''}  `
+	const infoService = [{
+		title: 'Horario de servicio',
+		content: Place.horas
+	},
+	{
+		title: 'Bioseguridad',
+		content: BiosegTxt
+	},
+	{
+		title: 'Domicilio',
+		content: `${Place.del ? 'Si' : 'No'}`
+	}]
+	const otherServicesNames = ['Wifi', 'Parqueadero', 'Piscina', 'Bar', 'Reserva']
 
-			]
-			setInfoService(info)
-			setPlace(PlaceRes)
-		}
-		fetchData()
-	}, [id_place])
 	return (
 		<>
 			{Place && infoService
@@ -55,7 +42,7 @@ const PlaceDetails = ({ id_place = 'vbCDE7lfUj3YETnMSFLg' }) => {
 								<span>Guardar</span>
 							</div>
 						</section>
-						<Images images={Place == null ? DefaultImgs : Place.imagesURL} />
+						<Images images={Place.imagesURL} />
 						<section className='col-12 mt-5 row pb-5'>
 							<div className='col-6 '>
 								<section className='d-flex justify-content-between'>
@@ -68,7 +55,7 @@ const PlaceDetails = ({ id_place = 'vbCDE7lfUj3YETnMSFLg' }) => {
 								<hr></hr>
 								<section>
 									{
-										infoService.map((info, index) => {
+										infoService.map((info) => {
 											return (
 												<Item_service key={info.title} iconURL={Place.iconURL} title={info.title} content={info.content} />
 											)
@@ -83,18 +70,17 @@ const PlaceDetails = ({ id_place = 'vbCDE7lfUj3YETnMSFLg' }) => {
 								</section>
 								<hr></hr>
 								<section className='container p-4'>
-									<h3 className='mb-4'>Otors servicios</h3>
+									<h3 className='mb-4'>Otros servicios</h3>
 									<div className='col-12 row'>
-										{keys.map((key) => {
-											const service = Place.services[key]
+										{Place.otherServices.map((service, index) => {
+											//TODO: CAMBIAR EL ICONO QUE SE MUESTRA
 											if (service) {
 												return <div className='col-6'>
-													< Item_service iconURL={Place.iconURL} title={key[0].toUpperCase() + key.slice(1)} content={'Si'} />
+													< Item_service iconURL={Place.iconURL} title={otherServicesNames[index]} content={'Si'} />
 												</div>
 											}
 										})}
 									</div>
-
 								</section>
 							</div>
 							<div className='col-6 container-fluid p-5'>
@@ -106,7 +92,6 @@ const PlaceDetails = ({ id_place = 'vbCDE7lfUj3YETnMSFLg' }) => {
 				: <div className='vw-100 vh-100 '>
 					<Loadin_c />
 				</div>
-
 			}
 
 		</>

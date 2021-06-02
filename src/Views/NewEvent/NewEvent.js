@@ -39,11 +39,11 @@ const NewEvent = () => {
     return (
         <>
             <Navbar color={1} />
-            <div className='vh-100'>
+            <div className='vh-100 pb-5'>
 
                 {
                     contextAuth.user
-                        ? <form onSubmit={handleSubmit} className={`row container-fluid mb-5 ${Styles['container']} `}>
+                        ? <form onSubmit={handleSubmit} className={`row container-fluid mb-5 ${Styles['container']} pb-5`}>
                             <h2 className='col-12 mb-5'>Añadir un nuevo evento</h2>
                             <div className='col-12 text-left'>
                                 <p className='text-left'><span className='text-danger'>* </span>Campos obligatorios </p>

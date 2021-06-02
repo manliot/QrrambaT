@@ -31,11 +31,11 @@ const NewPlace = () => {
         e.preventDefault()
 
         console.log({
-            address, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
+            address, bioseguridad, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
         })
         if (name !== '' && horas !== '' && type !== '...' && subtype !== '' && phone !== '' && address !== '' && lat !== '' && lon !== '' && description !== '' && iconURL !== '' && imagesURL['prin'] !== ('') && imagesURL['sec1'] !== ('') && imagesURL['sec2'] !== ('') && imagesURL['sec3'] !== ('') && imagesURL['sec4'] !== ('')) {
             const place = {
-                address, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
+                address, bioseguridad, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
             }
             console.log("lugar a guardar : ", place)
             db.collection('Places').add(place)

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { UploadFile } from '../../firebase/services/Storage'
 const defaultImg = 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg'
 
-const ImageUpload = ({ Fn }) => {
+const ImageUpload = ({ Fn, name = 'Imagen' }) => {
     const [progress, setProgress] = useState(0)
     const [URL, setURL] = useState('')
     const handleUploadIcon = (e) => {
@@ -46,8 +46,8 @@ const ImageUpload = ({ Fn }) => {
                     <progress className=' mr-auto' value={progress} max="100" />
                 </div>
                 <div className="btn btn-primary col-4">
-                    <label for="img-4" >Choose file</label>
-                    <input id="img-4" onChange={e => handleUploadIcon(e)} className={Styles['input-file']} type="file" />
+                    <label for={name} >Choose file</label>
+                    <input id={name} onChange={e => handleUploadIcon(e)} className={Styles['input-file']} type="file" />
                 </div>
             </div>
         </div>

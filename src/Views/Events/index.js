@@ -1,12 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
 import SearchBar from "../../components/common/SearchBar";
 import Navbar from "../../components/layout/NavBar";
-import Footer from "../../components/layout/Footer";
+
 import styles from "../../css/Views/Events.module.css";
 import CardEvent from "../../components/common/Card_event";
 import Bq from "../../assets/Barranquilla.jpeg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
 
 import { useInView } from "react-intersection-observer";
 

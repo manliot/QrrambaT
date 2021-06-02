@@ -1,9 +1,9 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import Navbar from '../../components/layout/NavBar'
 import InputTxt from '../../components/common/InputTxt'
 import { Context } from '../../context/StaticContext'
 import Styles from '../../css/Views/NewPlaces.module.css';
-import { storage, db } from '../../firebase/firebase_config'
+import { db } from '../../firebase/firebase_config'
 import ImageUpload from '../../components/common/ImageUpload'
 
 const NewEvent = () => {
@@ -19,11 +19,11 @@ const NewEvent = () => {
         e.preventDefault()
 
         console.log({
-            name, hour, place, description, photoURL, creador: contextAuth.user.id
+            name, date, hour, place, description, photoURL, creador: contextAuth.user.id
         })
         if (name !== '' && hour !== '' && place !== '' && photoURL !== '') {
             const event = {
-                name, hour, place, description, photoURL, creador: contextAuth.user.id
+                name, date, hour, place, description, photoURL, creador: contextAuth.user.id
             }
             db.collection('Events').add(event)
                 .then(() => {

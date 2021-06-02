@@ -5,6 +5,7 @@ import { Context } from '../../context/StaticContext'
 import Styles from '../../css/Views/NewPlaces.module.css';
 import { db } from '../../firebase/firebase_config'
 import ImageUpload from '../../components/common/ImageUpload'
+import Sad from '../../assets/sad.svg'
 
 const NewEvent = () => {
     const contextAuth = useContext(Context)
@@ -65,16 +66,14 @@ const NewEvent = () => {
                             </div>
                             <input className="btn btn-success mt-5 col-2 offset-5" value='Listo' type="submit" />
                         </form>
-                        : <div>
-
+                        : <div className={`row container-fluid mb-5 vh-100 ${Styles['container']} `}>
+                            <img className='h-50' alt='sad' src={Sad}></img>
+                            <h3>Tienes que autenticarte bell@ :)</h3>
                         </div>
                 }
             </div>
         </>
     )
 }
-{/* <div className={`row container-fluid mb-5 ${Styles['container']} `}>
-    <h3>Tienes que autenticarte bell@ :)</h3>
-</div> */}
 
 export default NewEvent

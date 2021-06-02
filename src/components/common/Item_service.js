@@ -4,7 +4,7 @@ const Item_service = ({ iconURL, title, content }) => {
     return (
         <div className='d-flex mt-4'>
             <div className='mx-3'>
-                <img className={`${Styles['iconURL']} alt='item' rounded`} src={iconURL} />
+                <img className={`${Styles['iconURL']} alt='item' rounded`} alt='item servicio' src={iconURL} />
             </div>
             <div >
                 <h5>{title}</h5>

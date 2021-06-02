@@ -1,5 +1,5 @@
 import Styles from '../../css/componets/common/ImageUpload.module.css'
-import { storage, db } from '../../firebase/firebase_config'
+import { storage } from '../../firebase/firebase_config'
 import { useState } from 'react'
 import { UploadFile } from '../../firebase/services/Storage'
 const defaultImg = 'https://mdbootstrap.com/img/Photos/Others/placeholder.jpg'

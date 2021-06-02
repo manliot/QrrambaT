@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import styles from '../../css/Views/TouristPlaces.module.css'
 import Navbar from '../../components/layout/NavBar'
 import SearchBar from '../../components/common/SearchBar'

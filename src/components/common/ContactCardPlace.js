@@ -6,7 +6,7 @@ const ContactCardPlace = ({ imgURL, score, n_reseñas, address, phone, Web }) =>
         <div className={` ${Style['container']}`}>
             <div className={Style['subContainer']}>
                 <div className='col-12 d-flex'>
-                    <img className={` ${Style['image']}`} src={imgURL} />
+                    <img className={` ${Style['image']}`} src={imgURL} alt='imagen a subir' />
                     <div className='d-flex justify-content-end'>
                         <h3>{score}</h3>
                     </div>

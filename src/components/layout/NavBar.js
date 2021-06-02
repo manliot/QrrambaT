@@ -39,7 +39,6 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
   const logout = () => {
     contextAuth.logout()
   }
-
   return (
     <div className={`${styles['container']} ${color === 1 ? styles['dark'] : ''}`}>
       <Link to="/">

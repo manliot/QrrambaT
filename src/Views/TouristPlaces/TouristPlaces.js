@@ -102,7 +102,7 @@ const TouristPlaces = (props) => {
           }
         </section>
         <section className={styles['column-two']}>
-          <Map initial={initial} />
+          <Map initial={initial} places={places_filter} />
         </section>
       </div>
     </div>

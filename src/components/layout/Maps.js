@@ -2,6 +2,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
 import Styles from '../../css/componets/layout/Maps.module.css'
+import { Link } from 'react-router-dom'
 
 
 
@@ -44,7 +45,17 @@ const Maps = ({ initial, places = [] }) => {
                     return (
                         <Marker icon={icons[type]} position={marker}>
                             <Popup>
-                                A pretty CSS3 popup. <br /> Easily customizable.
+                                <div className="card">
+                                    <img className="card-img-top" src={place.imagesURL[0]} alt="car del lugar" />
+                                    <div className="card-body p-3">
+                                        <h4 className="card-title">{place.name}</h4>
+                                        <h6 className="card-title">{place.type}  </h6>
+                                        <p className="card-text"><strong>Direccion:</strong> {place.address}</p>
+                                        <p className="card-text"><strong>Telefono:</strong> {place.phone}</p>
+                                        <p className="card-text"><strong>Horario</strong> {place.horas}</p>
+                                        <Link to={'/place-details', { Place: place }} className={`btn btn-primary ${Styles['link']} `}>Mas informacion</Link>
+                                    </div>
+                                </div>
                             </Popup>
                         </Marker>
                     )

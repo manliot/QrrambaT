@@ -1,5 +1,6 @@
 .container {
     height: 100%;
+    background: #f5f5dc;
 }
 
 .header {
@@ -23,7 +24,6 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: beige;
     height: calc(100vh - 90px);
 }
 
@@ -31,13 +31,11 @@
     display: flex;
     width: 100%;
     justify-content: left;
-    background-color: beige;
     padding: 60px;
     padding-bottom: 0px;
 }
 
 .column {
-    background-color: beige;
     width: 30%;
     padding: 10px;
 }

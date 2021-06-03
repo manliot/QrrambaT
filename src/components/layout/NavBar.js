@@ -40,7 +40,7 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
     contextAuth.logout()
   }
   return (
-    <div className={`${styles['container']} ${color === 1 ? styles['dark'] : ''}`}>
+    <div className={`${styles['container']} ${color === 1 ? styles['dark'] : ''} ${type === 'search' ? styles['bg-y'] : ''}`}>
       <Link to="/">
         <img src={Logo} className={styles['logo-img']} alt='icono de qrramba' />
       </Link>
@@ -113,7 +113,7 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
               </ul>
             </div>
           </>
-          : <Link onClick={login}  className={styles['rounded-btn']}>
+          : <Link onClick={login} className={styles['rounded-btn']}>
             <span>Ingresa</span>
           </Link>
         }

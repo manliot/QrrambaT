@@ -2,8 +2,8 @@
 import NavBar from '../../components/layout/NavBar'
 import Images from '../../components/common/ImagesPlaces'
 import Styles from '../../css/Views/PlaceDetails.module.css'
-import Item_service from '../../components/common/Item_service'
-import Loadin_c from '../../components/common/Loading'
+import ItemService from '../../components/common/Item_service'
+import LoadinC from '../../components/common/Loading'
 import CardContactPlace from '../../components/common/ContactCardPlace'
 
 
@@ -50,14 +50,14 @@ const PlaceDetails = ({ location }) => {
 										<h3>{Place.type} {Place.name}</h3>
 										<p>{Place.subtype}</p>
 									</div>
-									<img className={Styles['iconURL']} src={Place.iconURL} />
+									<img className={Styles['iconURL']} src={Place.iconURL} alt={`${Place.name}-img`} />
 								</section>
 								<hr></hr>
 								<section>
 									{
 										infoService.map((info) => {
 											return (
-												<Item_service key={info.title} iconURL={Place.iconURL} title={info.title} content={info.content} />
+												<ItemService key={info.title} iconURL={Place.iconURL} title={info.title} content={info.content} />
 											)
 										})}
 								</section>
@@ -76,8 +76,10 @@ const PlaceDetails = ({ location }) => {
 											//TODO: CAMBIAR EL ICONO QUE SE MUESTRA
 											if (service) {
 												return <div className='col-6'>
-													< Item_service iconURL={Place.iconURL} title={otherServicesNames[index]} content={'Si'} />
+													< ItemService key={`${service.creador}+ ${index}`} iconURL={Place.iconURL} title={otherServicesNames[index]} content={'Si'} />
 												</div>
+											} else {
+												return <></>
 											}
 										})}
 									</div>
@@ -90,7 +92,7 @@ const PlaceDetails = ({ location }) => {
 					</div>
 				</>
 				: <div className='vw-100 vh-100 '>
-					<Loadin_c />
+					<LoadinC />
 				</div>
 			}
 

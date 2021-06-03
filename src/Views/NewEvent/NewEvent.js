@@ -19,9 +19,9 @@ const NewEvent = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log({
+        /* console.log({
             name, date, hour, place, description, photoURL, creador: contextAuth.user.id
-        })
+        }) */
         if (name !== '' && hour !== '' && place !== '' && photoURL !== '') {
             const event = {
                 name, date, hour, place, description, photoURL, creador: contextAuth.user.id

@@ -20,7 +20,7 @@ const ImageUpload = ({ Fn, name = 'Imagen' }) => {
                     setProgress(progress_);
                 },
                 (error) => {
-                    console.log(error);
+                    alert(error);
                 },
                 () => {
                     storage

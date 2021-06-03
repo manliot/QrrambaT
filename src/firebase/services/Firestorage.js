@@ -4,7 +4,7 @@ const getPlacebyId = async (id) => {
     let Place_ = {}
     const Places = await db.collection('Places').get()
     if (Places.empty) {
-        console.log('no matching documents')
+        alert('No hay datos registrados, comienza a ingresar info ingresando con Google')
     }
     Places.forEach(doc => {
         if (doc.id === id) {
@@ -19,7 +19,7 @@ const getAllPlaces = async () => {
     const Places = await db.collection('Places').get()
 
     if (Places.empty) {
-        console.log('no matching documents')
+        alert('No hay datos registrados, comienza a ingresar info ingresando con Google')
     }
     Places.forEach(place => {
         Places_.push(place.data())
@@ -31,7 +31,7 @@ const getAllEvents = async () => {
     const Events = await db.collection('Events').get()
 
     if (Events.empty) {
-        console.log('no matching documents')
+        alert('No hay datos registrados, comienza a ingresar info ingresando con Google')
     }
     Events.forEach(event => {
         Events_.push(event.data())

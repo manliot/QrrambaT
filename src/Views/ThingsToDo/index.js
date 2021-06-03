@@ -25,7 +25,7 @@ const Events = () => {
           {inView && <SearchBar searchTxt="Que cosas por hacer estas buscando" />}
         </div>
       </header>
-      <h2 className={styles["title"]}>Cosas para hacer en Barranquilla {console.log(inView)}</h2>
+      <h2 className={styles["title"]}>Cosas para hacer en Barranquilla </h2>
       <h3 className={styles["subtitle"]}> Restaurantes</h3>
       <div className={styles["carousel-div"]}>
         <Carousel className={styles["carousel"]}>

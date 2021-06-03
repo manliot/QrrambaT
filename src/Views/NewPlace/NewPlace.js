@@ -30,14 +30,14 @@ const NewPlace = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log({
+        /* console.log({
             address, bioseguridad, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
-        })
+        }) */
         if (name !== '' && horas !== '' && type !== '...' && subtype !== '' && phone !== '' && address !== '' && lat !== '' && lon !== '' && description !== '' && iconURL !== '' && imagesURL['prin'] !== ('') && imagesURL['sec1'] !== ('') && imagesURL['sec2'] !== ('') && imagesURL['sec3'] !== ('') && imagesURL['sec4'] !== ('')) {
             const place = {
                 address, bioseguridad, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
             }
-            console.log("lugar a guardar : ", place)
+            /* console.log("lugar a guardar : ", place) */
             db.collection('Places').add(place)
                 .then(() => {
                     alert('Se guardó correctamente')
@@ -53,17 +53,14 @@ const NewPlace = (props) => {
     const updateBioseg = (index) => {
         bioseguridad[index] = !bioseguridad[index]
         setbioseguridad(bioseguridad)
-        console.log(bioseguridad)
     }
     const updateOtherServices = (index) => {
         otherServices[index] = !otherServices[index]
         setOtherServices(otherServices)
-        console.log(otherServices)
     }
     const updateImagesURL = (url, index) => {
         imagesURL[index] = url
         setimagesURL(imagesURL)
-        console.log(imagesURL)
     }
     return (
         <>

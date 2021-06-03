@@ -41,7 +41,7 @@ const Events = () => {
 
   if (!events || !events_filter) {
     return (
-      <div class="vh-100 vw-100 " >
+      <div className="vh-100 vw-100 " >
         <LoadinC />
       </div>
     )
@@ -49,10 +49,10 @@ const Events = () => {
 
   return (
     <div className={styles["container"]}>
-      <Navbar selected={2} type={`${inView ? "" : "search"}`} />
+      <Navbar Func={filter_events} valueSearchVar={busquedaTxt} selected={2} type={`${inView ? "" : "search"}`} />
       <header className={styles["header"]}>
         <div ref={ref} className={styles["search-container"]}>
-          {inView && <SearchBar searchTxt="Que estas buscando" />}
+          {inView && <SearchBar Func={filter_events} valueTxt={busquedaTxt} searchTxt="Que estas buscando" />}
         </div>
       </header>
       <div className={styles["container"]}>
@@ -61,15 +61,17 @@ const Events = () => {
         </div>
         <div className={styles["three-columns"]}>
           {
-            events_filter.map((evento => {
-              return (<section className={styles["column"]}>
-                <CardEvent
-                  title={evento.name}
-                  time={evento.hour}
-                  place={evento.place}
-                  url_img={evento.photoURL}
-                />
-              </section>)
+            events_filter.map(((evento, index) => {
+              return (
+                <section key={`${evento.creador}+ ${index}`} className={styles["column"]}>
+                  <CardEvent
+                    title={evento.name}
+                    time={evento.hour}
+                    place={evento.place}
+                    url_img={evento.photoURL}
+                  />
+                </section>
+              )
             }))
           }
         </div>

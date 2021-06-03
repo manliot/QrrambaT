@@ -16,16 +16,14 @@ const getCenter = () => {
     const lat = position.coords.latitude
     const lng = position.coords.longitude
     center = { lat: lat, lng: lng }
-    console.log(center)
   });
-  console.log(center)
 }
 getCenter()
 
 const TouristPlaces = (props) => {
   const context = useContext(Context)
   const [places, setPlaces] = useState(null)
-  const [busquedaTxt, setBusquedaTxt] = useState(null)
+  const [busquedaTxt, setBusquedaTxt] = useState('')
   const [places_filter, setPlacesfilter] = useState(null)
   const [updating, setUpdating] = useState(false)
 
@@ -57,7 +55,7 @@ const TouristPlaces = (props) => {
 
   const initial = {
     center: center,
-    zoom: 100
+    zoom: 11
   }
   //cuando el componte que se asignemos ref este a 150px de salir de la pantalla
   //la variable inView cambia su valor (puede tomar  true o false)
@@ -65,7 +63,6 @@ const TouristPlaces = (props) => {
     rootMargin: '-150px',
   });
   const handlePlace = (place) => {
-    console.log('handle', props.history)
     context.setPlace(place)
     props.history.push('/place-details', { Place: place })
 
@@ -75,7 +72,7 @@ const TouristPlaces = (props) => {
   //renderiza un sniper indicando que esta cargando la pagina
   if (!places || !places_filter) {
     return (
-      <div class="vh-100 vw-100 " >
+      <div className="vh-100 vw-100 " >
         <LoadinC />
       </div>
     )
@@ -98,16 +95,20 @@ const TouristPlaces = (props) => {
         <section className={styles['column-one']}>
           {
             updating
-              ? <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
+              ? <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
               </div>
               //recorremos place_filter y oir cada elemeto (place) renderizamos
               //la card con sus daatos
-              : places_filter.map((place) => {
-                return <div className={'btn card'} onClick={() => handlePlace(place)}>
-                  <h2>{place.name} </h2>
-                  <p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
-                </div>
+              : places_filter.map((place, index) => {
+                return (
+                  < div key={`${place.creador}+ ${index}`}
+                    className={'btn card'} onClick={() => handlePlace(place)}
+                  >
+                    <h2>{place.name} </h2>
+                    <p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
+                  </div>
+                )
               })
           }
         </section>

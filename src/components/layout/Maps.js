@@ -24,10 +24,11 @@ const Maps = ({ initial, places = [] }) => {
     places.map((place) => {
         const marker = [parseFloat(place.lat), parseFloat(place.lon)]
         markers.push(marker)
+        return null
     })
     return (
         <div className={`${Styles['container']}`}>
-            <MapContainer zoom={initial.zoom} className={`${Styles['map-container']}`} center={initial.center} zoom={13} scrollWheelZoom={false}>
+            <MapContainer zoom={initial.zoom} className={`${Styles['map-container']}`} center={initial.center} scrollWheelZoom={false}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -41,9 +42,8 @@ const Maps = ({ initial, places = [] }) => {
                 {markers.map((marker, index) => {
                     const place = places[index]
                     const type = place.type
-                    console.log(icons[type])
                     return (
-                        <Marker icon={icons[type]} position={marker}>
+                        <Marker key={`${type}+ ${index}`} icon={icons[type]} position={marker}>
                             <Popup>
                                 <div className="card">
                                     <img className="card-img-top" src={place.imagesURL[0]} alt="car del lugar" />
@@ -53,7 +53,7 @@ const Maps = ({ initial, places = [] }) => {
                                         <p className="card-text"><strong>Direccion:</strong> {place.address}</p>
                                         <p className="card-text"><strong>Telefono:</strong> {place.phone}</p>
                                         <p className="card-text"><strong>Horario</strong> {place.horas}</p>
-                                        <Link to={'/place-details', { Place: place }} className={`btn btn-primary ${Styles['link']} `}>Mas informacion</Link>
+                                        <Link to={{ pathname: '/place-details', state: { Place: place } }} className={`btn btn-primary ${Styles['link']} `}>Mas informacion</Link>
                                     </div>
                                 </div>
                             </Popup>

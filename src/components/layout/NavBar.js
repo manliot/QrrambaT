@@ -25,15 +25,18 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
         if (isNewUser) {//saved in db
           db.collection('users').doc(user.uid).set(userLogged)
             .then((res) => {
-              console.log("hola", res);
+              alert('Bienvenido a Qrramba, aqui encontraras todo lo necesario para tener una experiencia inolvidable en barranquilla. Ahora puedes añadir nuevos sitios, eventos o servicios')
             })
             .catch((err) => {
-              console.log(err);
+              alert(`error inesperado ${err}`);
             })
+        } else {
+
+          alert('Bienvenido nuevamente a Qrramba. Recuerda que puedes añadir nuevos sitios, eventos o servicios')
         }
       })
       .catch((err) => {
-        console.log(err)
+        alert(`error inesperado ${err}`);
       })
   }
   const logout = () => {
@@ -70,11 +73,11 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
             <hr className={`${styles['hr']} ${selected !== 3 ? styles['hide'] : ''}`} />
           </div>
           <div>
-            <Link className={styles['link']}>Noticias</Link>
+            <Link to='#' className={styles['link']}>Noticias</Link>
             <hr className={`${styles['hr']} ${selected !== 4 ? styles['hide'] : ''} `} />
           </div>
           <div>
-            <Link className={styles['link']}>Comunidad</Link>
+            <Link to='#' className={styles['link']}>Comunidad</Link>
             <hr className={`${styles['hr']} ${selected !== 5 ? styles['hide'] : ''} `} />
           </div>
         </div>
@@ -84,19 +87,20 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
           ? <>
             <div className="dropdown">
               <Link
+                to='#'
                 className={`dropdown-toggle ${styles['link']} ${styles['link-new']} ${color === 1 ? styles['yellow'] : ''}`}
                 id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
               >
                 <span>+</span>
               </Link>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><Link class="dropdown-item" to="/new-place">Agregar nuevo sitio turistico</Link></li>
-                <li><Link class="dropdown-item" to="/new-event">Agregar evento cultural</Link></li>
-                <li><Link class="dropdown-item" to="/">Agregar un servicio</Link></li>
+                <li><Link className="dropdown-item" to="/new-place">Agregar nuevo sitio turistico</Link></li>
+                <li><Link className="dropdown-item" to="/new-event">Agregar evento cultural</Link></li>
+                <li><Link className="dropdown-item" to="/">Agregar un servicio</Link></li>
               </ul>
             </div>
             <div className="dropdown">
-              <Link className={styles['link']}
+              <Link to='#' className={styles['link']}
                 id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
               >
                 <img
@@ -105,15 +109,15 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
                   alt="foto de perfil"
                 />
               </Link>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                <li><span class="dropdown-item">{contextAuth.user.name}  </span> </li>
-                <br class="primary"></br>
-                <li><Link class="dropdown-item" to="#">Perfil</Link></li>
-                <li><Link onClick={logout} class="dropdown-item" to="#">Cerrar Sesion</Link></li>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><span className="dropdown-item">{contextAuth.user.name}  </span> </li>
+                <br className="primary"></br>
+                <li><Link className="dropdown-item" to="#">Perfil</Link></li>
+                <li><Link onClick={logout} className="dropdown-item" to="#">Cerrar Sesion</Link></li>
               </ul>
             </div>
           </>
-          : <Link onClick={login} className={styles['rounded-btn']}>
+          : <Link to='#' onClick={login} className={styles['rounded-btn']}>
             <span>Ingresa</span>
           </Link>
         }

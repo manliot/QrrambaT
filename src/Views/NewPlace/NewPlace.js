@@ -6,7 +6,7 @@ import { db } from '../../firebase/firebase_config'
 import InputTxt from '../../components/common/InputTxt'
 import ImageUpload from '../../components/common/ImageUpload'
 import SwitchTxt from '../../components/common/SwitchTxt'
-const NewPlace = () => {
+const NewPlace = (props) => {
     const contextAuth = useContext(Context)
     const [name, setname] = useState('')
     const [type, setType] = useState('')
@@ -41,6 +41,7 @@ const NewPlace = () => {
             db.collection('Places').add(place)
                 .then(() => {
                     alert('Se guardó correctamente')
+                    props.history.push('/events')
                 })
                 .catch((e) => alert('Error'))
 

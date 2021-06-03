@@ -7,7 +7,7 @@ import { db } from '../../firebase/firebase_config'
 import ImageUpload from '../../components/common/ImageUpload'
 import Sad from '../../assets/sad.svg'
 
-const NewEvent = () => {
+const NewEvent = (props) => {
     const contextAuth = useContext(Context)
     const [name, setname] = useState('')
     const [hour, sethour] = useState('')
@@ -28,6 +28,7 @@ const NewEvent = () => {
             }
             db.collection('Events').add(event)
                 .then(() => {
+                    props.history.push('/events')
                     alert('Se guardó correctamente')
                 })
                 .catch((e) => alert('Error'))

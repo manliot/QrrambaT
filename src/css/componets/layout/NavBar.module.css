@@ -40,6 +40,7 @@
     text-decoration: none;
     font-weight: 100;
     font-size: 18px;
+    transition: 0.5s;
 }
 
 .link-new {
@@ -112,6 +113,7 @@
     display: flex;
     justify-content: center;
     padding-left: 2%;
+    transition: 1s;
 }
 
 .user-pic {

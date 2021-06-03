@@ -7,7 +7,7 @@ import Map from '../../components/layout/Maps'
 
 import { useInView } from 'react-intersection-observer';
 import { getAllPlaces } from '../../firebase/services/Firestorage'
-import Loadin_c from '../../components/common/Loading'
+import LoadinC from '../../components/common/Loading'
 
 let center = {}
 
@@ -76,7 +76,7 @@ const TouristPlaces = (props) => {
   if (!places || !places_filter) {
     return (
       <div class="vh-100 vw-100 " >
-        <Loadin_c />
+        <LoadinC />
       </div>
     )
   }

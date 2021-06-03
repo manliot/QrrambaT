@@ -5,11 +5,11 @@ function Card_events(props) {
     const { title, time, url_img, place } = props
     return (
         <div className={styles['container']}>
-            <img src={url_img} alt={`${title}-img`}/>
+            <img className={styles['img']} src={url_img} alt={`${title}-img`} />
             <div className={styles['container-text']}>
-                <h5>{title}</h5>
-                <h6>Hora: {time}</h6>
-                <h6>Lugar: {place}</h6>
+                <h5 className='mb-3'>{title}</h5>
+                <p className='mb-1'><strong>Hora:</strong> {time}</p>
+                <p><strong>Lugar:</strong> {place}</p>
             </div>
         </div>
     )

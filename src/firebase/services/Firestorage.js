@@ -21,10 +21,22 @@ const getAllPlaces = async () => {
     if (Places.empty) {
         console.log('no matching documents')
     }
-    Places.forEach(doc => {
-        Places_.push(doc.data())
+    Places.forEach(place => {
+        Places_.push(place.data())
     })
     return Places_
 }
+const getAllEvents = async () => {
+    let Events_ = []
+    const Events = await db.collection('Events').get()
 
-export { getPlacebyId, getAllPlaces }
+    if (Events.empty) {
+        console.log('no matching documents')
+    }
+    Events.forEach(event => {
+        Events_.push(event.data())
+    })
+    return Events_
+}
+
+export { getPlacebyId, getAllPlaces, getAllEvents }

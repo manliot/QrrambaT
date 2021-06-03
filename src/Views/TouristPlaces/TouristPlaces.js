@@ -104,8 +104,9 @@ const TouristPlaces = (props) => {
               //recorremos place_filter y oir cada elemeto (place) renderizamos
               //la card con sus daatos
               : places_filter.map((place) => {
-                return <div onClick={() => handlePlace(place)}>
-                  <h2>{place.name} Aqui va una card con la info del lugar. Shary dijo que lo haria . este componente es clickeable</h2>
+                return <div className={'btn card'} onClick={() => handlePlace(place)}>
+                  <h2>{place.name} </h2>
+                  <p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
                 </div>
               })
           }

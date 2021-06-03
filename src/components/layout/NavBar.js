@@ -54,7 +54,7 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
         :
         <div className={styles['link-container']}>
           <div >
-            <Link to="/places" className={styles['link']}>Hoteles, restaunrante y lugares</Link>
+            <Link to="/places" className={styles['link']}>Hoteles, restaurantes y lugares</Link>
             <hr className={`${styles['hr']} ${selected !== 1 ? styles['hide'] : ''}`} />
           </div>
           <div>

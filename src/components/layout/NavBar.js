@@ -91,8 +91,8 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
               </Link>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><Link class="dropdown-item" to="/new-place">Agregar nuevo sitio turistico</Link></li>
-                <li><Link class="dropdown-item" href="/new-event">Agregar evento cultural</Link></li>
-                <li><Link class="dropdown-item" href="/new-event">Agregar un servicio</Link></li>
+                <li><Link class="dropdown-item" to="/new-event">Agregar evento cultural</Link></li>
+                <li><Link class="dropdown-item" to="/">Agregar un servicio</Link></li>
               </ul>
             </div>
             <div className="dropdown">
@@ -108,12 +108,12 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                 <li><span class="dropdown-item">{contextAuth.user.name}  </span> </li>
                 <br class="primary"></br>
-                <li><Link class="dropdown-item" href="#">Perfil</Link></li>
-                <li><Link onClick={logout} class="dropdown-item" href="#">Cerrar Sesion</Link></li>
+                <li><Link class="dropdown-item" to="#">Perfil</Link></li>
+                <li><Link onClick={logout} class="dropdown-item" to="#">Cerrar Sesion</Link></li>
               </ul>
             </div>
           </>
-          : <Link onClick={login} /* to='/login' */ className={styles['rounded-btn']}>
+          : <Link onClick={login}  className={styles['rounded-btn']}>
             <span>Ingresa</span>
           </Link>
         }

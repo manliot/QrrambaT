@@ -74,9 +74,7 @@ const Events = () => {
               />
             </section>)
           }))
-
         }
-
       </div>
     </div>
   );

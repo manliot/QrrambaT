@@ -21,11 +21,13 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: beige;
     height: calc(100vh - 90px);
 }
 
-.title{
+.title {
     display: flex;
     width: 100%;
     justify-content: left;
@@ -34,7 +36,7 @@
     padding-bottom: 0px;
 }
 
-.column{
+.column {
     background-color: beige;
     width: 30%;
     padding: 10px;

@@ -11,6 +11,7 @@ import Events from '../Views/Events'
 import { Context } from '../context/StaticContext'
 import ThingsToDo from '../Views/ThingsToDo'
 import NewEvent from '../Views/NewEvent/NewEvent'
+import NewService from '../Views/NewService/NewService'
 import styles from '../App.css'
 
 
@@ -26,6 +27,7 @@ const Routes = () => {
           <Route exact path='/events' component={Events} />
           <Route exact path='/thingstodo' component={ThingsToDo} />
           <Route exact path='/new-event' component={NewEvent} />
+          <Route exact path='/new-service' component={NewService} />
           <Route exact path='/new-place'>
             {AuthContext.user ? <NewPlace /> : <Redirect to='/' />}
           </Route>

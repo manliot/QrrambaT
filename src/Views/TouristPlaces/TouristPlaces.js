@@ -9,6 +9,18 @@ import { useInView } from 'react-intersection-observer';
 import { getAllPlaces } from '../../firebase/services/Firestorage'
 import Loadin_c from '../../components/common/Loading'
 
+let center = {}
+
+const getCenter = () => {
+  navigator.geolocation.getCurrentPosition(position => {
+    const lat = position.coords.latitude
+    const lng = position.coords.longitude
+    center = { lat: lat, lng: lng }
+    console.log(center)
+  });
+  console.log(center)
+}
+getCenter()
 
 const TouristPlaces = (props) => {
   const context = useContext(Context)
@@ -44,10 +56,7 @@ const TouristPlaces = (props) => {
   }
 
   const initial = {
-    center: {
-      lat: 10.86,
-      lng: -74.77
-    },
+    center: center,
     zoom: 100
   }
   //cuando el componte que se asignemos ref este a 150px de salir de la pantalla

@@ -73,7 +73,7 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
             <hr className={`${styles['hr']} ${selected !== 3 ? styles['hide'] : ''}`} />
           </div>
           <div>
-            <Link to='#' className={styles['link']}>Noticias</Link>
+            <Link to='/news' className={styles['link']}>Noticias</Link>
             <hr className={`${styles['hr']} ${selected !== 4 ? styles['hide'] : ''} `} />
           </div>
           <div>

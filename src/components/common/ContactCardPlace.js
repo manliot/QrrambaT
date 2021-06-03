@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+
 import Style from '../../css/componets/common/ContactCardPlace.module.css'
 
-const ContactCardPlace = ({ imgURL, score, n_reseñas, address, phone, Web }) => {
+const ContactCardPlace = ({ imgURL, score, n_reseñas, address, phone, web }) => {
     return (
         <div className={` ${Style['container']}`}>
             <div className={Style['subContainer']}>
@@ -20,11 +20,10 @@ const ContactCardPlace = ({ imgURL, score, n_reseñas, address, phone, Web }) =>
             </div>
 
             <div className={` ${Style['group-boton']} `}>
-                <Link type="button" className={` btn-primary ${Style['button1']} `}><span>Sitio web</span></Link>
-                <Link type="button" className={` btn-success ${Style['button1']} `}><span>Llamar</span></Link>
+                <a href={`${web}`} type="button" className={` btn-primary ${Style['button1']} `}><span>Sitio web</span></a>
+                <a href={`tel:${phone}`} type="button" className={` btn-success ${Style['button1']} `}><span>Llamar</span></a>
             </div>
         </div>
     )
 }
-
 export default ContactCardPlace

@@ -9,7 +9,6 @@ import CardContactPlace from '../../components/common/ContactCardPlace'
 
 const PlaceDetails = ({ location }) => {
 	const Place = location.state.Place
-	console.log(location.state.Place)
 	const score = 4.8
 	const cant_reseñ = 1200
 	const BiosegTxt = `Se requiere de ${Place.bioseguridad[0] ? 'Mascarilla' : ''} • ${Place.bioseguridad[1] ? 'alcohol' : ''} • ${Place.bioseguridad[2] ? 'tomar la temperatura' : ''}  `
@@ -57,7 +56,7 @@ const PlaceDetails = ({ location }) => {
 									{
 										infoService.map((info) => {
 											return (
-												<ItemService key={info.title} iconURL={Place.iconURL} title={info.title} content={info.content} />
+												<ItemService key={info.title.split(' ').join()} iconURL={Place.iconURL} title={info.title} content={info.content} />
 											)
 										})}
 								</section>
@@ -75,9 +74,11 @@ const PlaceDetails = ({ location }) => {
 										{Place.otherServices.map((service, index) => {
 											//TODO: CAMBIAR EL ICONO QUE SE MUESTRA
 											if (service) {
-												return <div className='col-6'>
-													< ItemService key={`${service.creador}+ ${index}`} iconURL={Place.iconURL} title={otherServicesNames[index]} content={'Si'} />
-												</div>
+												return (
+													<div key={`${service.creador}+ ${index}`} className='col-6'>
+														< ItemService iconURL={Place.iconURL} title={otherServicesNames[index]} content={'Si'} />
+													</div>
+												)
 											} else {
 												return <></>
 											}
@@ -86,7 +87,7 @@ const PlaceDetails = ({ location }) => {
 								</section>
 							</div>
 							<div className='col-6 container-fluid p-5'>
-								<CardContactPlace imgURL={Place.iconURL} score={score} n_reseñas={100} address={Place.address} phone={Place.phone} Web={"google.com"} />
+								<CardContactPlace web={Place.web} imgURL={Place.iconURL} score={score} n_reseñas={100} address={Place.address} phone={Place.phone} Web={"google.com"} />
 							</div>
 						</section>
 					</div>

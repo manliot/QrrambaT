@@ -1,0 +1,16 @@
+.fontIcon-yellow {
+    color: #FFC107;
+    margin-right: 2px;
+}
+
+.fontIcon-container {
+    display: flex;
+    align-items: center;
+}
+.fontIcon-container :first-child {
+    margin-right: 3px;
+}
+
+.fontIcon-default {
+    color: #838685;
+}

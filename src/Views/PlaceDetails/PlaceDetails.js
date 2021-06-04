@@ -5,16 +5,18 @@ import Styles from '../../css/Views/PlaceDetails.module.css'
 import ItemService from '../../components/common/Item_service'
 import LoadinC from '../../components/common/Loading'
 import CardContactPlace from '../../components/common/ContactCardPlace'
-
+import ScoreR from '../../components/common/ScoreResult'
 import { faClock, faHeadSideMask, faBicycle } from '@fortawesome/free-solid-svg-icons'
 import { faWifi, faCar, faSwimmer, faBeer, faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 const iconsInfo = [faClock, faHeadSideMask, faBicycle]
 const iconsServices = [faWifi, faCar, faSwimmer, faBeer, faCalendar]
 const PlaceDetails = ({ location }) => {
+	const score = '4.0'
+
 	const Place = location.state.Place
-	const score = 4.8
-	const cant_reseñ = 1200
 	const BiosegTxt = `Se requiere de ${Place.bioseguridad[0] ? 'Mascarilla' : ''} • ${Place.bioseguridad[1] ? 'alcohol' : ''} • ${Place.bioseguridad[2] ? 'tomar la temperatura' : ''}  `
 	const infoService = [{
 		title: 'Horario de servicio',
@@ -39,15 +41,15 @@ const PlaceDetails = ({ location }) => {
 						<h2>{Place.type} {Place.name}</h2>
 						<section className='col-12 pb-3 row'>
 							<div className='col-8'>
-								<span>{score}</span> <span>|{cant_reseñ} Reseñas</span>
+								<ScoreR score={3.5} n_reseñas={'1.000'}></ScoreR>
 							</div>
-							<div className='col-4 d-flex justify-content-end'>
-								<span>Guardar</span>
+							<div className='col-4 d-flex justify-content-end align-items-center'>
+								<FontAwesomeIcon icon={faHeart} /> <span>{'Guardar'}</span>
 							</div>
 						</section>
 						<Images images={Place.imagesURL} />
 						<section className='col-12 mt-5 row pb-5'>
-							<div className='col-6 '>
+							<div className='col-6 px-4 '>
 								<section className='d-flex justify-content-between'>
 									<div >
 										<h3>{Place.type} {Place.name}</h3>
@@ -90,8 +92,9 @@ const PlaceDetails = ({ location }) => {
 									</div>
 								</section>
 							</div>
-							<div className='col-6 container-fluid p-5'>
-								<CardContactPlace web={Place.web} imgURL={Place.iconURL} score={score} n_reseñas={100} address={Place.address} phone={Place.phone} Web={"google.com"} />
+							<div className='col-6 container-fluid px-5'>
+								<CardContactPlace place={Place} web={Place.web} imgURL={Place.iconURL} score={score} n_reseñas={100} address={Place.address} phone={Place.phone}  />
+
 							</div>
 						</section>
 					</div>

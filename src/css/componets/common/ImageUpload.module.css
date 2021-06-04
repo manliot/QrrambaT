@@ -1,0 +1,19 @@
+.img-logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.image {
+    width: 150px;
+    border-radius: 20px;
+}
+
+.input-file {
+    display: none;
+}
+
+.btn-file{
+    background-color: #f2b936 ;
+    border-radius: 100px;
+}

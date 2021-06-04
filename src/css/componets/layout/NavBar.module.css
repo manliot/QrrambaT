@@ -8,13 +8,17 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 10000;
     color: black;
 }
 
 .dark {
     background-color: #272525;
     color: white;
+}
+
+.bg-y {
+    background: url('../../../assets/Bg_limpio.png');
 }
 
 .link-container {
@@ -28,13 +32,15 @@
 .link-container div {
     text-align: center;
     margin-left: 25px;
-    margin-top:4px
+    margin-top: 4px
 }
 
 .link {
     color: inherit;
     text-decoration: none;
     font-weight: 100;
+    font-size: 18px;
+    transition: 0.5s;
 }
 
 .link-new {
@@ -59,15 +65,16 @@
     border-style: solid;
     width: 27px;
     color: inherit;
-    border-radius:50px
-
+    border-radius: 50px
 }
-.hide{
+
+.hide {
     opacity: 0;
 }
+
 .link:hover {
     opacity: 60%;
-    color: black;
+    color: white;
 }
 
 .logo-img {
@@ -94,6 +101,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 18px;
 }
 
 .rounded-btn:hover {
@@ -105,6 +113,7 @@
     display: flex;
     justify-content: center;
     padding-left: 2%;
+    transition: 1s;
 }
 
 .user-pic {

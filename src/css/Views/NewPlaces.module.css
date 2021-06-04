@@ -1,5 +1,6 @@
 .container {
     padding-top: 130px;
+    background-color: #f5f5dc;
 }
 
 .img-logo {
@@ -16,7 +17,7 @@
     display: none;
 }
 
-.btn-file{
-    background-color: #f2b936 ;
+.btn-file {
+    background-color: #f2b936;
     border-radius: 100px;
 }

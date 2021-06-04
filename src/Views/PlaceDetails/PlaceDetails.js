@@ -10,6 +10,7 @@ import { faClock, faHeadSideMask, faBicycle } from '@fortawesome/free-solid-svg-
 import { faWifi, faCar, faSwimmer, faBeer, faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import Maps from '../../components/layout/Maps'
 
 const iconsInfo = [faClock, faHeadSideMask, faBicycle]
 const iconsServices = [faWifi, faCar, faSwimmer, faBeer, faCalendar]
@@ -21,17 +22,18 @@ const PlaceDetails = ({ location }) => {
 	const infoService = [{
 		title: 'Horario de servicio',
 		content: Place.horas
-	},
-	{
+	}, {
 		title: 'Bioseguridad',
 		content: BiosegTxt
-	},
-	{
+	}, {
 		title: 'Domicilio',
 		content: `${Place.del ? 'Si' : 'No'}`
 	}]
 	const otherServicesNames = ['Wifi', 'Parqueadero', 'Piscina', 'Bar', 'Reserva']
-
+	const initial = {
+		center: { lat: Place.lat, lng: Place.lon },
+		zoom: 70
+	}
 	return (
 		<>
 			{Place && infoService
@@ -93,9 +95,12 @@ const PlaceDetails = ({ location }) => {
 								</section>
 							</div>
 							<div className='col-6 container-fluid px-5'>
-								<CardContactPlace place={Place} web={Place.web} imgURL={Place.iconURL} score={score} n_reseñas={100} address={Place.address} phone={Place.phone}  />
-
+								<CardContactPlace place={Place} web={Place.web} imgURL={Place.iconURL} score={score} n_reseñas={100} address={Place.address} phone={Place.phone} />
+								<div className={Styles['map-container']}>
+									<Maps type='NoInitialMarker' places={[Place]} initial={initial} />
+								</div>
 							</div>
+
 						</section>
 					</div>
 				</>

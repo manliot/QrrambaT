@@ -19,7 +19,7 @@ const CreateIcon = (svg_name) => {
 
 const icons = { Restaurante: CreateIcon('restaurant'), Hotel: CreateIcon('hotel'), Aereopuerto: CreateIcon('aereopuerto'), CentroComercial: CreateIcon('cc'), Parque: CreateIcon('park'), Gimnasio: CreateIcon('gym'), Bar: CreateIcon('bar') }
 
-const Maps = ({ initial, places = [] }) => {
+const Maps = ({ type, initial, places = [] }) => {
     const markers = []
     places.map((place) => {
         const marker = [parseFloat(place.lat), parseFloat(place.lon)]
@@ -33,12 +33,15 @@ const Maps = ({ initial, places = [] }) => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={initial.center} >
-                    <Popup>
-                        Esta es tu ubicacion actual
-                    </Popup>
-
-                </Marker>
+                {
+                    type === 'NoInitialMarker'
+                        ? <></>
+                        : <Marker position={initial.center} >
+                            <Popup>
+                                Esta es tu ubicacion actual
+                            </Popup>
+                        </Marker>
+                }
                 {markers.map((marker, index) => {
                     const place = places[index]
                     const type = place.type

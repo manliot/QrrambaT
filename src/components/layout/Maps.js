@@ -10,7 +10,7 @@ const CreateIcon = (svg_name) => {
     const Rest = L.icon(
         {
             iconUrl: `/${svg_name}.svg`,
-            iconSize: [20, 20],
+            iconSize: [55, 55],
             className: "leaflet-venue-icon"
         }
     )

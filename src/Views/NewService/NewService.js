@@ -23,9 +23,9 @@ const NewService = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log({
+        /* console.log({
             name, descripcion, precio, negociable, phone, horario, photoURL, type, creador: context.user.id
-        })
+        }) */
         if (name !== '' && horario !== '' && type !== '' && descripcion !== '' && precio !== '' && photoURL !== '' && phone !== '') {
             const service = {
                 name, descripcion, precio, negociable, phone, horario, photoURL, type, creador: context.user.id

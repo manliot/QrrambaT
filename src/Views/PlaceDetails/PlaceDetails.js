@@ -6,7 +6,11 @@ import ItemService from '../../components/common/Item_service'
 import LoadinC from '../../components/common/Loading'
 import CardContactPlace from '../../components/common/ContactCardPlace'
 
+import { faClock, faHeadSideMask, faBicycle } from '@fortawesome/free-solid-svg-icons'
+import { faWifi, faCar, faSwimmer, faBeer, faCalendar } from '@fortawesome/free-solid-svg-icons'
 
+const iconsInfo = [faClock, faHeadSideMask, faBicycle]
+const iconsServices = [faWifi, faCar, faSwimmer, faBeer, faCalendar]
 const PlaceDetails = ({ location }) => {
 	const Place = location.state.Place
 	const score = 4.8
@@ -54,9 +58,9 @@ const PlaceDetails = ({ location }) => {
 								<hr></hr>
 								<section>
 									{
-										infoService.map((info) => {
+										infoService.map((info, index) => {
 											return (
-												<ItemService key={info.title.split(' ').join()} iconURL={Place.iconURL} title={info.title} content={info.content} />
+												<ItemService type='icon' key={info.title.split(' ').join()} iconURL={iconsInfo[index]} title={info.title} content={info.content} />
 											)
 										})}
 								</section>
@@ -76,7 +80,7 @@ const PlaceDetails = ({ location }) => {
 											if (service) {
 												return (
 													<div key={`${service.creador}+ ${index}`} className='col-6'>
-														< ItemService iconURL={Place.iconURL} title={otherServicesNames[index]} content={'Si'} />
+														< ItemService type='icon' iconURL={iconsServices[index]} title={otherServicesNames[index]} content={'Si'} />
 													</div>
 												)
 											} else {

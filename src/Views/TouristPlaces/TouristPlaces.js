@@ -20,7 +20,7 @@ const getCenter = () => {
 }
 getCenter()
 
-const TouristPlaces = (props) => {
+const TouristPlaces = (/* props */) => {
   const context = useContext(Context)
   const [places, setPlaces] = useState(null)
   const [busquedaTxt, setBusquedaTxt] = useState('')
@@ -37,7 +37,7 @@ const TouristPlaces = (props) => {
     }
     fetchAllplaces()
   }, [])
-
+  /* console.log(props) */
   /* Esta funcion se la mandamos a la searchbar y ella se encarga de llamarla cuando
   el texto de busqueda cambia.
    */
@@ -64,7 +64,7 @@ const TouristPlaces = (props) => {
   });
   const handlePlace = (place) => {
     context.setPlace(place)
-    props.history.push('/place-details', { Place: place })
+   /*  props.history.push('/place-details', { Place: place }) */
 
   }
 

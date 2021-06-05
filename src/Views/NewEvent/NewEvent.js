@@ -17,6 +17,7 @@ const NewEvent = (props) => {
     const [photoURL, setphotoURL] = useState('')
 
     const handleSubmit = (e) => {
+        console.log(props)
         e.preventDefault()
         /* console.log({
             name, date, hour, place, description, photoURL, creador: contextAuth.user.id
@@ -30,7 +31,7 @@ const NewEvent = (props) => {
                     props.history.push('/events')
                     alert('Se guardó correctamente')
                 })
-                .catch((e) => alert('Error'))
+                .catch((e) => alert('Error eventos'))
 
         } else {
             alert("debe llenar campos obligatorios e imagenes")

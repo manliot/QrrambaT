@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+img{
+    padding: 10px;
+    max-width: 40%;
+    max-height: 80%;
+    border-radius: 15px;
+}
+
+.container-text{
+    padding:10px;
+}
+
+.author{
+    opacity: 0.7;
+}

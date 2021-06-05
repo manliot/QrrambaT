@@ -6,6 +6,7 @@ import TouristPlaces from '../Views/TouristPlaces/TouristPlaces'
 import NewPlace from '../Views/NewPlace/NewPlace'
 import PlaceDetails from '../Views/PlaceDetails/PlaceDetails'
 import Events from '../Views/Events'
+import EventDetails from '../Views/Events/detail'
 import ThingsToDo from '../Views/ThingsToDo'
 import NewEvent from '../Views/NewEvent/NewEvent'
 import News from '../Views/News/News'
@@ -23,6 +24,7 @@ const Routes = () => {
           <Route exact path='/login' component={Login} />
           <Route exact path='/places' component={TouristPlaces} />
           <Route exact path='/events' component={Events} />
+          <Route exact path='/event-details' component={EventDetails} />
           <Route exact path='/thingstodo' component={ThingsToDo} />
           <Route exact path='/new-event' component={NewEvent} />
           <Route exact path='/news' component={News} />

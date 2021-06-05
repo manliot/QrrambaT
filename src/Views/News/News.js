@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import SearchBar from "../../components/common/SearchBar";
 import Navbar from "../../components/layout/NavBar";
 import styles from "../../css/Views/News.module.css";
@@ -9,13 +9,13 @@ import { news as Data } from "./data";
 import { useInView } from "react-intersection-observer";
 
 const News = () => {
-  const[newsDetail,setnewsDetail] = useState(Data[0])
+  const [newsDetail, setnewsDetail] = useState(Data[0])
 
   const { ref, inView /* entry */ } = useInView({
     rootMargin: "-150px",
   });
 
-  function selectNews(index) {
+  const selectNews = (index) => {
     setnewsDetail(Data[index])
   }
 
@@ -46,17 +46,19 @@ const News = () => {
         </div>
         <div className={styles["secondary"]}>
           <h3>Otras noticias</h3>
-          {Data.map((news, index) => (
-            <div onClick={()=>selectNews(index)}>
-              <CardNews
-                title={news.title}
-                author={news.author}
-                date={news.date}
-                description={news.description}
-                url_img={news.img}
-              />
-            </div>
-          ))}
+          {Data.map((news, index) => {
+            return (
+              <div onClick={() => { selectNews(index) }}>
+                <CardNews
+                  title={news.title}
+                  author={news.author}
+                  date={news.date}
+                  description={news.description}
+                  url_img={news.img}
+                />
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>

@@ -40,13 +40,13 @@ const NewPlace = (props) => {
             /* console.log("lugar a guardar : ", place) */
             db.collection('Places').add(place)
                 .then(() => {
+                    props.history.push('/places')
                     alert('Se guardó correctamente')
-                    props.history.push('/events')
                 })
-                .catch((e) => alert('Error'))
+                .catch((e) => alert('Error, places'))
 
         } else {
-            alert("debe llenar campos obligaorios e imagenes")
+            alert("Debe llenar campos obligatorios e imagenes")
         }
     }
 
@@ -140,7 +140,7 @@ const NewPlace = (props) => {
                                         <SwitchTxt title='Alcohol' Fn={() => updateBioseg(1)} orientacion='rl' />
                                     </div>
                                     <div className="col-6">
-                                        <SwitchTxt title='Alcohol' Fn={() => updateBioseg(2)} orientacion='rl' />
+                                        <SwitchTxt title='Prueba covid' Fn={() => updateBioseg(2)} orientacion='rl' />
                                     </div>
                                 </div>
                             </div>

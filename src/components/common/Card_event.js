@@ -8,7 +8,7 @@ function Card_events(props) {
             <img className={styles["img-box"]} src={url_img} alt={`${title}-img`} />
             <div className={styles['container-text']}>
                 <h5 className='mb-3'>{title}</h5>
-                <p className='mb-1'><strong>Hora:</strong> {time}</p>
+                <p className='mb-1'><strong>Fecha:</strong> {time}</p>
                 <p><strong>Lugar:</strong> {place}</p>
             </div>
         </div>

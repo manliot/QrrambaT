@@ -34,13 +34,14 @@
 }
 
 .img-box{
-    width: 60%;
+    width: 100%;
     text-align: center;
     justify-content: center;
 }
 
 .image{
-    width: 100%;
+    width: 60%;
+    padding-bottom: 20px;
 }
 
 .two-columns {

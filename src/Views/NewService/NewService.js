@@ -35,7 +35,7 @@ const NewService = (props) => {
                     props.history.push('/')
                     alert('Se guardó correctamente')
                 })
-                .catch((e) => alert('Error'))
+                .catch((e) => alert('Error servicio'))
 
         } else {
             alert("debe llenar campos obligaorios e imagenes")

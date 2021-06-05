@@ -6,20 +6,20 @@ import { Link } from 'react-router-dom'
 
 
 
-const CreateIcon = (svg_name) => {
-    const Rest = L.icon(
-        {
-            iconUrl: `/${svg_name}.svg`,
-            iconSize: [55, 55],
-            className: "leaflet-venue-icon"
-        }
-    )
-    return Rest
-}
-
-const icons = { Restaurante: CreateIcon('restaurant'), Hotel: CreateIcon('hotel'), Aereopuerto: CreateIcon('aereopuerto'), CentroComercial: CreateIcon('cc'), Parque: CreateIcon('park'), Gimnasio: CreateIcon('gym'), Bar: CreateIcon('bar') }
 
 const Maps = ({ type, initial, places = [] }) => {
+
+    const CreateIcon = (svg_name) => {
+        const Rest = L.icon(
+            {
+                iconUrl: `/${svg_name}.svg`,
+                iconSize: [55, 55],
+                className: "leaflet-venue-icon"
+            }
+        )
+        return Rest
+    }
+    const icons = { Restaurante: CreateIcon('restaurant'), Hotel: CreateIcon('hotel'), Aereopuerto: CreateIcon('aereopuerto'), CentroComercial: CreateIcon('cc'), Parque: CreateIcon('park'), Gimnasio: CreateIcon('gym'), Bar: CreateIcon('bar') }
     const markers = []
     places.map((place) => {
         const marker = [parseFloat(place.lat), parseFloat(place.lon)]

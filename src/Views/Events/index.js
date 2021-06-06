@@ -52,7 +52,7 @@ const Events = () => {
       <Navbar Func={filter_events} valueSearchVar={busquedaTxt} selected={2} type={`${inView ? "" : "search"}`} />
       <header className={styles["header"]}>
         <div ref={ref} className={styles["search-container"]}>
-          {inView && <SearchBar Func={filter_events} valueTxt={busquedaTxt} searchTxt="Que estas buscando" />}
+          {inView && <SearchBar Func={filter_events} valueTxt={busquedaTxt} searchTxt="Que estas buscando?" />}
         </div>
       </header>
       <div className={styles["container"]}>

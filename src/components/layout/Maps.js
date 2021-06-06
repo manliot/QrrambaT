@@ -6,20 +6,19 @@ import { Link } from 'react-router-dom'
 
 
 
-const CreateIcon = (svg_name) => {
-    const Rest = L.icon(
-        {
-            iconUrl: `/${svg_name}.svg`,
-            iconSize: [20, 20],
-            className: "leaflet-venue-icon"
-        }
-    )
-    return Rest
-}
 
-const icons = { Restaurante: CreateIcon('restaurant'), Hotel: CreateIcon('hotel'), Aereopuerto: CreateIcon('aereopuerto'), CentroComercial: CreateIcon('cc'), Parque: CreateIcon('park'), Gimnasio: CreateIcon('gym'), Bar: CreateIcon('bar') }
-
-const Maps = ({ initial, places = [] }) => {
+const Maps = ({ type, initial, places = [] }) => {
+    const CreateIcon = (svg_name) => {
+        const Rest = L.icon(
+            {
+                iconUrl: `/${svg_name}.svg`,
+                iconSize: [55, 55],
+                className: "leaflet-venue-icon"
+            }
+        )
+        return Rest
+    }
+    const icons = { Restaurante: CreateIcon('restaurant'), Hotel: CreateIcon('hotel'), Aereopuerto: CreateIcon('aereopuerto'), Centrocomercial: CreateIcon('cc'), Parque: CreateIcon('park'), Gimnasio: CreateIcon('gym'), Bar: CreateIcon('bar') }
     const markers = []
     places.map((place) => {
         const marker = [parseFloat(place.lat), parseFloat(place.lon)]
@@ -33,15 +32,18 @@ const Maps = ({ initial, places = [] }) => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={initial.center} >
-                    <Popup>
-                        Esta es tu ubicacion actual
-                    </Popup>
-
-                </Marker>
+                {
+                    type === 'NoInitialMarker'
+                        ? <></>
+                        : <Marker position={initial.center} >
+                            <Popup>
+                                Esta es tu ubicacion actual
+                            </Popup>
+                        </Marker>
+                }
                 {markers.map((marker, index) => {
                     const place = places[index]
-                    const type = place.type
+                    const type = place.type.split(' ').join("")
                     return (
                         <Marker key={`${type}+ ${index}`} icon={icons[type]} position={marker}>
                             <Popup>

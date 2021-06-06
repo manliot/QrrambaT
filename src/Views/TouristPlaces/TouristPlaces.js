@@ -4,6 +4,7 @@ import Navbar from '../../components/layout/NavBar'
 import SearchBar from '../../components/common/SearchBar'
 import { Context } from '../../context/StaticContext'
 import Map from '../../components/layout/Maps'
+import CardPlaces from "../../components/common/Card_places";
 
 import { useInView } from 'react-intersection-observer';
 import { getAllPlaces } from '../../firebase/services/Firestorage'
@@ -20,7 +21,7 @@ const getCenter = () => {
 }
 getCenter()
 
-const TouristPlaces = (props) => {
+const TouristPlaces = (/* props */) => {
   const context = useContext(Context)
   const [places, setPlaces] = useState(null)
   const [busquedaTxt, setBusquedaTxt] = useState('')
@@ -37,7 +38,7 @@ const TouristPlaces = (props) => {
     }
     fetchAllplaces()
   }, [])
-
+  /* console.log(props) */
   /* Esta funcion se la mandamos a la searchbar y ella se encarga de llamarla cuando
   el texto de busqueda cambia.
    */
@@ -64,7 +65,7 @@ const TouristPlaces = (props) => {
   });
   const handlePlace = (place) => {
     context.setPlace(place)
-    props.history.push('/place-details', { Place: place })
+    /*  props.history.push('/place-details', { Place: place }) */
 
   }
 
@@ -92,7 +93,7 @@ const TouristPlaces = (props) => {
         </div>
       </header>
       <div className={styles['two-columns']}>
-        <section className={styles['column-one']}>
+        <section className={`${styles['column-one']} `}>
           {
             updating
               ? <div className="spinner-border" role="status">
@@ -103,10 +104,22 @@ const TouristPlaces = (props) => {
               : places_filter.map((place, index) => {
                 return (
                   < div key={`${place.creador}+ ${index}`}
-                    className={'btn card'} onClick={() => handlePlace(place)}
+                    className={`${styles['btn card']} mt-4 pl-3`} onClick={() => handlePlace(place)}
                   >
-                    <h2>{place.name} </h2>
-                    <p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
+                    <section key={`${place.creador}+ ${index}`} className={`${styles['column']} ` }>
+                      <CardPlaces
+                        title={place.name}
+                        cellp={place.phone}
+                        type={place.type}
+                        address={place.address}
+                        url_img={place.imagesURL[0]}
+                        score = {4}
+                    />
+
+                    </section>
+                    { //<h2>{place.name} </h2>
+                      //<p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
+                    }
                   </div>
                 )
               })

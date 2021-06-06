@@ -4,3 +4,14 @@
     object-fit: fill;
     border-radius: 100px;
 }
+
+.icon-container {
+    width: 60px;
+    height: 60px;
+    font-size: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

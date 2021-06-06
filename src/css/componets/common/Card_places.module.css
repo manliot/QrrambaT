@@ -1,19 +1,22 @@
-.container{
-    margin-top: 20px;
+.container {
     text-align: left;
     width: 100%;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .img-box{
-    max-width: 100%;
-    max-height: 100%;
+    padding-top: 3%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
 }
 
-.container-text{
+.container-text {
     padding: 20px;
 }

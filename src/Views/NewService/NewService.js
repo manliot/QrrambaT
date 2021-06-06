@@ -23,9 +23,9 @@ const NewService = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log({
+        /* console.log({
             name, descripcion, precio, negociable, phone, horario, photoURL, type, creador: context.user.id
-        })
+        }) */
         if (name !== '' && horario !== '' && type !== '' && descripcion !== '' && precio !== '' && photoURL !== '' && phone !== '') {
             const service = {
                 name, descripcion, precio, negociable, phone, horario, photoURL, type, creador: context.user.id
@@ -35,7 +35,7 @@ const NewService = (props) => {
                     props.history.push('/')
                     alert('Se guardó correctamente')
                 })
-                .catch((e) => alert('Error'))
+                .catch((e) => alert('Error servicio'))
 
         } else {
             alert("debe llenar campos obligaorios e imagenes")

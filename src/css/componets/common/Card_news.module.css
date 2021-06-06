@@ -1,4 +1,5 @@
 .container{
+    display: flex;
     margin-top: 20px;
     text-align: left;
     width: 100%;
@@ -8,12 +9,21 @@
 }
 
 .img-box{
-    max-width: 100%;
-    max-height: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    padding: 10px;
+    max-width: 40%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .container-text{
-    padding: 20px;
+    padding:10px;
+}
+
+.author{
+    opacity: 0.7;
+    font-size: 10px;
+}
+
+.desc{
+    font-size: 10px;
 }

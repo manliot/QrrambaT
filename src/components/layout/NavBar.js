@@ -70,15 +70,15 @@ function NavBar({ color, type, selected, valueSearchVar, Func }) {
           </div>
           <div>
             <Link to="/thingstodo" className={styles['link']}>Cosas para hacer</Link>
-            <hr className={`${styles['hr']} ${selected !== 3 ? styles['hide'] : ''}`} />
+            <hr className={`${styles['hr']} ${selected !== 4 ? styles['hide'] : ''}`} />
           </div>
           <div>
             <Link to='/news' className={styles['link']}>Noticias</Link>
-            <hr className={`${styles['hr']} ${selected !== 4 ? styles['hide'] : ''} `} />
+            <hr className={`${styles['hr']} ${selected !== 5 ? styles['hide'] : ''} `} />
           </div>
           <div>
             <Link to='#' className={styles['link']}>Comunidad</Link>
-            <hr className={`${styles['hr']} ${selected !== 5 ? styles['hide'] : ''} `} />
+            <hr className={`${styles['hr']} ${selected !== 6 ? styles['hide'] : ''} `} />
           </div>
         </div>
       }

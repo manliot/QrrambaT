@@ -6,6 +6,7 @@ import { db } from '../../firebase/firebase_config'
 import InputTxt from '../../components/common/InputTxt'
 import ImageUpload from '../../components/common/ImageUpload'
 import SwitchTxt from '../../components/common/SwitchTxt'
+
 const NewPlace = (props) => {
     const contextAuth = useContext(Context)
     const [name, setname] = useState('')
@@ -29,7 +30,6 @@ const NewPlace = (props) => {
     const [imagesURL, setimagesURL] = useState(['', '', '', '', ''])
     const handleSubmit = (e) => {
         e.preventDefault()
-
         /* console.log({
             address, bioseguridad, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
         }) */
@@ -38,15 +38,20 @@ const NewPlace = (props) => {
                 address, bioseguridad, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
             }
             /* console.log("lugar a guardar : ", place) */
+
             db.collection('Places').add(place)
                 .then(() => {
                     alert('Se guardó correctamente')
-                    props.history.push('/events')
+                    props.history.push('/places')
+
                 })
-                .catch((e) => alert('Error'))
+                .catch((e) => {
+                    alert('Error2', e)
+
+                })
 
         } else {
-            alert("debe llenar campos obligaorios e imagenes")
+            alert("Debe llenar campos obligatorios e imagenes")
         }
     }
 
@@ -140,7 +145,7 @@ const NewPlace = (props) => {
                                         <SwitchTxt title='Alcohol' Fn={() => updateBioseg(1)} orientacion='rl' />
                                     </div>
                                     <div className="col-6">
-                                        <SwitchTxt title='Alcohol' Fn={() => updateBioseg(2)} orientacion='rl' />
+                                        <SwitchTxt title='Tomar temperatura' Fn={() => updateBioseg(2)} orientacion='rl' />
                                     </div>
                                 </div>
                             </div>

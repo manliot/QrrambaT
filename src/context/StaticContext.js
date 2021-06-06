@@ -4,14 +4,14 @@ export const Context = createContext()
 
 export const ContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
-    const [searchText, setSearchText] = useState('')
+    const [Place, setPlace] = useState('')
     return (
         <Context.Provider
             value={{
                 user,
                 setUser,
-                searchText,
-                setSearchText,
+                Place,
+                setPlace,
                 login: (user) => {
                     setUser(user)
                 },

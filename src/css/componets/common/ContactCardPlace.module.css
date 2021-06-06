@@ -1,0 +1,41 @@
+.image {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    object-fit: fill;
+}
+
+.subContainer {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.container {
+    border-radius: 20px;
+    background-color: #b0e9d6;
+    padding-top: 40px;
+}
+
+.group-boton {
+    width: 100%;
+    display: flex;
+}
+
+.group-boton :first-child {
+    border-radius: 0 0 0 20px;
+}
+
+.group-boton :last-child {
+    border-radius: 0 0 20px 0;
+}
+
+.button1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18;
+    flex-wrap: nowrap;
+    flex: 1;
+    height: 70px;
+}

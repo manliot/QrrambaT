@@ -1,0 +1,6 @@
+.iconURL {
+    width: 60px;
+    height: 60px;
+    object-fit: fill;
+    border-radius: 100px;
+}

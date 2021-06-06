@@ -46,7 +46,7 @@ const ImageUpload = ({ Fn, name = 'Imagen' }) => {
                     <progress className=' mr-auto' value={progress} max="100" />
                 </div>
                 <div className="btn btn-primary col-4">
-                    <label for={name} >Choose file</label>
+                    <label for={name} >File</label>
                     <input id={name} onChange={e => handleUploadIcon(e)} className={Styles['input-file']} type="file" />
                 </div>
             </div>

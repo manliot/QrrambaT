@@ -20,7 +20,7 @@ const getCenter = () => {
 }
 getCenter()
 
-const TouristPlaces = (/* props */) => {
+const TouristPlaces = (props) => {
   const context = useContext(Context)
   const [places, setPlaces] = useState(null)
   const [busquedaTxt, setBusquedaTxt] = useState('')
@@ -63,8 +63,7 @@ const TouristPlaces = (/* props */) => {
     rootMargin: '-150px',
   });
   const handlePlace = (place) => {
-    context.setPlace(place)
-   /*  props.history.push('/place-details', { Place: place }) */
+    props.history.push('/place-details', { Place: place })
 
   }
 

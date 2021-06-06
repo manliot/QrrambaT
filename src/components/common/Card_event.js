@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../css/componets/common/Card_events.module.css'
 
+
 function Card_events(props) {
     const { title, time, url_img, place } = props
     return (
@@ -10,6 +11,7 @@ function Card_events(props) {
                 <h5 className='mb-3'>{title}</h5>
                 <p className='mb-1'><strong>Fecha:</strong> {time}</p>
                 <p><strong>Lugar:</strong> {place}</p>
+
             </div>
         </div>
     )

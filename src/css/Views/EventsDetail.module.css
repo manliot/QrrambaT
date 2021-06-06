@@ -23,7 +23,28 @@
   width: 100%;
   justify-content: left;
   background-color: beige;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding: 20px;
   margin: 0px;
+}
+
+.author {
+  padding-left: 20px;
+  opacity: 0.8;
+}
+
+.img-box {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.image {
+  width: 60%;
+  padding: 20px;
+}
+
+.content {
+  background: beige;
+  width: 100%;
+  text-align: left;
 }

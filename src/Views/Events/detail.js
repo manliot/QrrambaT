@@ -7,7 +7,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useInView } from "react-intersection-observer";
 
 const Detail = () => {
-
   const { ref, inView /* entry */ } = useInView({
     rootMargin: "-150px",
   });
@@ -26,7 +25,14 @@ const Detail = () => {
           )}
         </div>
       </header>
-      <h3 className={styles["title"]}>Titulo</h3>
+      <div className={styles["content"]}>
+        <h3 className={styles["title"]}>Titulo</h3>
+        <h6 className={styles["author"]}>Autor-fecha</h6>
+        <div className={styles["img-box"]}>
+          <img className={styles["image"]} src=""></img>
+        </div>
+        <p className={styles["description"]}>descripcion</p>
+      </div>
     </div>
   );
 };

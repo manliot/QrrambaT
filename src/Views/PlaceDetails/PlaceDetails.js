@@ -11,6 +11,7 @@ import { faWifi, faCar, faSwimmer, faBeer, faCalendar } from '@fortawesome/free-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import Maps from '../../components/layout/Maps'
+import Comment from '../../components/common/Card_comment'
 
 const iconsInfo = [faClock, faHeadSideMask, faBicycle]
 const iconsServices = [faWifi, faCar, faSwimmer, faBeer, faCalendar]
@@ -101,6 +102,10 @@ const PlaceDetails = ({ location }) => {
 							</div>
 
 						</section>
+					</div>
+					<h3>Comentarios</h3>
+					<div className={Styles['commentaries']}>	
+						<Comment name="Daniel Donado Avendaño" score={score} commentary="Ambiente agradable buenas medidas de Bio seguridad muy tranquilo y sin aglomeraciones" img={Place.iconURL}/>
 					</div>
 				</>
 				: <div className='vw-100 vh-100 '>

@@ -5,7 +5,7 @@ function Card_places(props) {
     const { title, cellp, type, address, url_img, score } = props
     return (
         <div className={`${styles['container']} row `}>
-            <div className='col-4'>
+            <div className={`${styles['img-container']}  `}>
                 <img className={styles["img-box"]} src={url_img} alt={`${title}-img`} />
             </div>
             <div className ='col-8'>

@@ -64,13 +64,8 @@ const TouristPlaces = (props) => {
     rootMargin: '-150px',
   });
   const handlePlace = (place) => {
-<<<<<<< HEAD
     props.history.push('/place-details', { Place: place })
-=======
     context.setPlace(place)
-    /*  props.history.push('/place-details', { Place: place }) */
->>>>>>> 86b0c60cadeb8551c0584b6a7d0d10d3af819821
-
   }
 
   //si places es nulo (es decir estamos esperando la respuesta de la peticion a firebase)
@@ -105,28 +100,33 @@ const TouristPlaces = (props) => {
               </div>
               //recorremos place_filter y oir cada elemeto (place) renderizamos
               //la card con sus daatos
-              : places_filter.map((place, index) => {
-                return (
-                  < div key={`${place.creador}+ ${index}`}
-                    className={`${styles['btn card']} mt-4 pl-3`} onClick={() => handlePlace(place)}
-                  >
-                    <section key={`${place.creador}+ ${index}`} className={`${styles['column']} ` }>
-                      <CardPlaces
-                        title={place.name}
-                        cellp={place.phone}
-                        type={place.type}
-                        address={place.address}
-                        url_img={place.imagesURL[0]}
-                        score = {4}
-                    />
+              : <div className="px-5">
+                {
+                  places_filter.map((place, index) => {
+                    return (
+                      < div key={`${place.creador}+ ${index}`}
+                        className={`${styles['btn card']} mt-5`}
+                        onClick={() => handlePlace(place)}
+                      >
+                        <section key={`${place.creador}+ ${index}`} className={`${styles['column']} `}>
+                          <CardPlaces
+                            title={place.name}
+                            cellp={place.phone}
+                            type={place.type}
+                            address={place.address}
+                            url_img={place.imagesURL[0]}
+                            score={2}
+                          />
 
-                    </section>
-                    { //<h2>{place.name} </h2>
-                      //<p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
-                    }
-                  </div>
-                )
-              })
+                        </section>
+                        { //<h2>{place.name} </h2>
+                          //<p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
+                        }
+                      </div>
+                    )
+                  })
+                }
+              </div>
           }
         </section>
         <section className={styles['column-two']}>

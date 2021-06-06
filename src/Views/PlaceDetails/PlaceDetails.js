@@ -11,12 +11,12 @@ import { faWifi, faCar, faSwimmer, faBeer, faCalendar } from '@fortawesome/free-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import Maps from '../../components/layout/Maps'
+import Comment from '../../components/common/Card_comment'
 
 const iconsInfo = [faClock, faHeadSideMask, faBicycle]
 const iconsServices = [faWifi, faCar, faSwimmer, faBeer, faCalendar]
 const PlaceDetails = ({ location }) => {
 	const score = '4.0'
-
 	const Place = location.state.Place
 	const BiosegTxt = `Se requiere de ${Place.bioseguridad[0] ? 'Mascarilla' : ''} • ${Place.bioseguridad[1] ? 'alcohol' : ''} • ${Place.bioseguridad[2] ? 'tomar la temperatura' : ''}  `
 	const infoService = [{
@@ -43,7 +43,7 @@ const PlaceDetails = ({ location }) => {
 						<h2>{Place.type} {Place.name}</h2>
 						<section className='col-12 pb-3 row'>
 							<div className='col-8'>
-								<ScoreR score={3.5} n_reseñas={'1.000'}></ScoreR>
+								<ScoreR score={(Math.random() * 5).toFixed(1)} n_reseñas={'1.000'}></ScoreR>
 							</div>
 							<div className='col-4 d-flex justify-content-end align-items-center'>
 								<FontAwesomeIcon icon={faHeart} /> <span>{'Guardar'}</span>
@@ -102,6 +102,10 @@ const PlaceDetails = ({ location }) => {
 							</div>
 
 						</section>
+					</div>
+					<h3>Comentarios</h3>
+					<div className={Styles['commentaries']}>	
+						<Comment name="Daniel Donado Avendaño" score={score} commentary="Ambiente agradable buenas medidas de Bio seguridad muy tranquilo y sin aglomeraciones" img={Place.iconURL}/>
 					</div>
 				</>
 				: <div className='vw-100 vh-100 '>

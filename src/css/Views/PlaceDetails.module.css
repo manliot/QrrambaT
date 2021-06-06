@@ -16,3 +16,9 @@
     object-fit: fill;
     border-radius: 100px;
 }
+
+.commentaries{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}

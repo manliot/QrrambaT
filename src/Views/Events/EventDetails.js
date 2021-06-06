@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "../../components/common/SearchBar";
 import Navbar from "../../components/layout/NavBar";
 import styles from "../../css/Views/EventsDetail.module.css";
@@ -6,10 +6,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { useInView } from "react-intersection-observer";
 
-const Detail = () => {
+const Detail = (prop) => {
+  const Event = prop.location.state.Event
   const { ref, inView /* entry */ } = useInView({
     rootMargin: "-150px",
   });
+
+  console.log("hola")
+  console.log(Event)
 
   return (
     <div className={styles["container"]}>
@@ -26,12 +30,12 @@ const Detail = () => {
         </div>
       </header>
       <div className={styles["content"]}>
-        <h3 className={styles["title"]}>Titulo</h3>
-        <h6 className={styles["author"]}>Autor-fecha</h6>
+        <h3 className={styles["title"]}>{Event.name}</h3>
+        <h6 className={styles["date"]}>{Event.place} - {Event.hour} - {Event.date}</h6>
         <div className={styles["img-box"]}>
-          <img className={styles["image"]} src=""></img>
+          <img className={styles["image"]} src={Event.photoURL}></img>
         </div>
-        <p className={styles["description"]}>descripcion</p>
+        <p className={styles["description"]}>{Event.description}</p>
       </div>
     </div>
   );

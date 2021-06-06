@@ -61,7 +61,8 @@
 .secondary {
   width: 30%;
   padding: 10px;
-  height: calc(100vh - 120px);
+  padding-top: 40px;
+  height: calc(100vh);
   overflow-y: scroll;
   text-align: left;
 }

@@ -5,13 +5,13 @@ import Login from '../Views/Login'
 import TouristPlaces from '../Views/TouristPlaces/TouristPlaces'
 import NewPlace from '../Views/NewPlace/NewPlace'
 import TouristServices from '../Views/TouristServices/TouristServices'
-
 import PlaceDetails from '../Views/PlaceDetails/PlaceDetails'
 import Events from '../Views/Events'
-import EventDetails from '../Views/Events/detail'
+import EventDetails from '../Views/Events/EventDetails'
 import ThingsToDo from '../Views/ThingsToDo'
 import NewEvent from '../Views/NewEvent/NewEvent'
 import News from '../Views/News/News'
+import Forum from '../Views/Forum'
 import NewService from '../Views/NewService/NewService'
 import styles from '../App.css'
 
@@ -34,6 +34,7 @@ const Routes = () => {
           <Route exact path='/new-place' component={NewPlace} />
           <Route exact path='/place-details' component={PlaceDetails} />
           <Route exact path='/services' component={TouristServices} />
+          <Route exact path='/forum' component={Forum} />
         </Switch>
       </BrowserRouter>
     </div>

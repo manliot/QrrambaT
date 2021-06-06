@@ -4,6 +4,7 @@ import Navbar from '../../components/layout/NavBar'
 import SearchBar from '../../components/common/SearchBar'
 import { Context } from '../../context/StaticContext'
 import Map from '../../components/layout/Maps'
+import CardPlaces from "../../components/common/Card_places";
 
 import { useInView } from 'react-intersection-observer';
 import { getAllPlaces } from '../../firebase/services/Firestorage'
@@ -63,7 +64,12 @@ const TouristPlaces = (props) => {
     rootMargin: '-150px',
   });
   const handlePlace = (place) => {
+<<<<<<< HEAD
     props.history.push('/place-details', { Place: place })
+=======
+    context.setPlace(place)
+    /*  props.history.push('/place-details', { Place: place }) */
+>>>>>>> 86b0c60cadeb8551c0584b6a7d0d10d3af819821
 
   }
 
@@ -91,7 +97,7 @@ const TouristPlaces = (props) => {
         </div>
       </header>
       <div className={styles['two-columns']}>
-        <section className={styles['column-one']}>
+        <section className={`${styles['column-one']} `}>
           {
             updating
               ? <div className="spinner-border" role="status">
@@ -102,10 +108,22 @@ const TouristPlaces = (props) => {
               : places_filter.map((place, index) => {
                 return (
                   < div key={`${place.creador}+ ${index}`}
-                    className={'btn card'} onClick={() => handlePlace(place)}
+                    className={`${styles['btn card']} mt-4 pl-3`} onClick={() => handlePlace(place)}
                   >
-                    <h2>{place.name} </h2>
-                    <p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
+                    <section key={`${place.creador}+ ${index}`} className={`${styles['column']} ` }>
+                      <CardPlaces
+                        title={place.name}
+                        cellp={place.phone}
+                        type={place.type}
+                        address={place.address}
+                        url_img={place.imagesURL[0]}
+                        score = {4}
+                    />
+
+                    </section>
+                    { //<h2>{place.name} </h2>
+                      //<p><strong>Aqui va una card con la info del lugar.</strong> Shary dijo que lo haria . este componente es clickeable</p>
+                    }
                   </div>
                 )
               })

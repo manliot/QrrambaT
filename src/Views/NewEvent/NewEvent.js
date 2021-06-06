@@ -18,7 +18,6 @@ const NewEvent = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         /* console.log({
             name, date, hour, place, description, photoURL, creador: contextAuth.user.id
         }) */
@@ -34,7 +33,7 @@ const NewEvent = (props) => {
                 .catch((e) => alert('Error eventos'))
 
         } else {
-            alert("debe llenar campos obligaorios e imagenes")
+            alert("debe llenar campos obligatorios e imagenes")
         }
     }
     return (

@@ -51,7 +51,7 @@ const NewPlace = (props) => {
                 })
 
         } else {
-            alert("debe llenar campos obligaorios e imagenes")
+            alert("Debe llenar campos obligatorios e imagenes")
         }
     }
 

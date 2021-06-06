@@ -8,7 +8,7 @@ function Card_places(props) {
             <div className={`${styles['img-container']}  `}>
                 <img className={styles["img-box"]} src={url_img} alt={`${title}-img`} />
             </div>
-            <div className ='col-8'>
+            <div className='col-8'>
                 <div className={styles['container-text']}>
                     <h6 className='mb-1'>{type}</h6>
                     <h5 className='mb-3'>{title}</h5>

@@ -115,7 +115,7 @@ const TouristPlaces = (props) => {
                             type={place.type}
                             address={place.address}
                             url_img={place.imagesURL[0]}
-                            score={2}
+                            score={(Math.random() * 5).toFixed(1)}
                           />
 
                         </section>

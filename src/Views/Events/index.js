@@ -38,7 +38,7 @@ const Events = (props) => {
   };
 
   const openDetails = (evento) => {
-    props.history.push('/event-details',{Event:evento})
+    props.history.push('/event-details', { Event: evento })
     console.log(evento)
   }
 
@@ -72,6 +72,7 @@ const Events = (props) => {
               searchTxt="Que estas buscando"
             />
           )}
+
         </div>
       </header>
       <div className={styles["container"]}>
@@ -81,10 +82,10 @@ const Events = (props) => {
         <div className={styles["three-columns"]}>
           {events_filter.map((evento, index) => {
             return (
-              <div className={styles["column"]} onClick={() => {openDetails(evento)}}>
+              <div className={styles["column"]} onClick={() => { openDetails(evento) }}>
                 <section
                   key={`${evento.creador}+ ${index}`}
-                  
+
                 >
                   <CardEvent
                     title={evento.name}

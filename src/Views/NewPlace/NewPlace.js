@@ -30,7 +30,6 @@ const NewPlace = (props) => {
     const [imagesURL, setimagesURL] = useState(['', '', '', '', ''])
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(props)
         /* console.log({
             address, bioseguridad, otherServices, lat, lon, horas, card, del, description, iconURL, imagesURL, name, phone, subtype, type, web, creador: contextAuth.user.id
         }) */
@@ -42,13 +41,11 @@ const NewPlace = (props) => {
 
             db.collection('Places').add(place)
                 .then(() => {
-                    console.log('hpl2')
                     alert('Se guardó correctamente')
                     props.history.push('/places')
 
                 })
                 .catch((e) => {
-                    console.log('hpl2', e)
                     alert('Error2', e)
 
                 })

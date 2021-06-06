@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 
 
 const Maps = ({ type, initial, places = [] }) => {
-
     const CreateIcon = (svg_name) => {
         const Rest = L.icon(
             {
@@ -19,7 +18,7 @@ const Maps = ({ type, initial, places = [] }) => {
         )
         return Rest
     }
-    const icons = { Restaurante: CreateIcon('restaurant'), Hotel: CreateIcon('hotel'), Aereopuerto: CreateIcon('aereopuerto'), CentroComercial: CreateIcon('cc'), Parque: CreateIcon('park'), Gimnasio: CreateIcon('gym'), Bar: CreateIcon('bar') }
+    const icons = { Restaurante: CreateIcon('restaurant'), Hotel: CreateIcon('hotel'), Aereopuerto: CreateIcon('aereopuerto'), Centrocomercial: CreateIcon('cc'), Parque: CreateIcon('park'), Gimnasio: CreateIcon('gym'), Bar: CreateIcon('bar') }
     const markers = []
     places.map((place) => {
         const marker = [parseFloat(place.lat), parseFloat(place.lon)]
@@ -44,7 +43,7 @@ const Maps = ({ type, initial, places = [] }) => {
                 }
                 {markers.map((marker, index) => {
                     const place = places[index]
-                    const type = place.type
+                    const type = place.type.split(' ').join("")
                     return (
                         <Marker key={`${type}+ ${index}`} icon={icons[type]} position={marker}>
                             <Popup>

@@ -17,7 +17,6 @@ const NewEvent = (props) => {
     const [photoURL, setphotoURL] = useState('')
 
     const handleSubmit = (e) => {
-        console.log(props)
         e.preventDefault()
         /* console.log({
             name, date, hour, place, description, photoURL, creador: contextAuth.user.id

@@ -39,4 +39,16 @@ const getAllEvents = async () => {
     return Events_
 }
 
-export { getPlacebyId, getAllPlaces, getAllEvents }
+const getAllServices = async () => {
+    let Services_ = []
+    const Services = await db.collection('Services').get()
+
+    if (Services.empty) {
+        alert('No hay datos registrados, comienza a ingresar info ingresando con Google')
+    }
+    Services.forEach(service => {
+        Services_.push(service.data())
+    })
+    return Services_
+}
+export { getPlacebyId, getAllPlaces, getAllEvents, getAllServices }

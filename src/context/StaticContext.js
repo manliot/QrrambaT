@@ -5,6 +5,7 @@ export const Context = createContext()
 export const ContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [Place, setPlace] = useState('')
+    const [Service, setService] = useState('')
     return (
         <Context.Provider
             value={{
@@ -12,6 +13,8 @@ export const ContextProvider = ({ children }) => {
                 setUser,
                 Place,
                 setPlace,
+                Service,
+                setService,
                 login: (user) => {
                     setUser(user)
                 },

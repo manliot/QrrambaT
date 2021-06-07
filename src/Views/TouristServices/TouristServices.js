@@ -74,6 +74,7 @@ const TouristServices = (props) => {
                                     <Card_service
                                         title={service.name}
                                         horario={service.horario}
+                                        contacto={service.phone}
                                         descripcion={service.descripcion}
                                         url_img={service.photoURL}
                                     />

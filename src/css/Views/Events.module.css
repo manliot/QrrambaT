@@ -1,5 +1,6 @@
 .container {
     height: 100%;
+    background: #f5f5dc;
 }
 
 .header {
@@ -21,20 +22,19 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: beige;
-    height: calc(100vh - 90px);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.title{
+.title {
     display: flex;
     width: 100%;
     justify-content: left;
-    background-color: beige;
     padding: 60px;
+    padding-bottom: 0px;
 }
 
-.column{
-    background-color: beige;
+.column {
     width: 30%;
     padding: 10px;
 }

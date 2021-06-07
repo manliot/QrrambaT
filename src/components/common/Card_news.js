@@ -1,0 +1,18 @@
+import React from 'react'
+import styles from '../../css/componets/common/Card_news.module.css'
+
+function Card_restaurant(props) {
+    const { title, url_img, author, description, date } = props
+    return (
+        <div className={styles['container']}>
+            <img className={styles["img-box"]} src={url_img} alt={`${title}-img`}/>
+            <div className={styles['container-text']}>
+                <h6>{title}</h6>
+                <h6 className={styles["author"]}>{author} - {date}</h6>
+                <h6 className={styles["desc"]}>{description}</h6>
+            </div>
+        </div>
+    )
+}
+
+export default Card_restaurant

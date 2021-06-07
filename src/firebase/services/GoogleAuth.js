@@ -15,8 +15,7 @@ export const LoginWithGoogle = async () => {
                 // The signed-in user info.
                 const user = result.user;
                 const isNewUser = result.additionalUserInfo.isNewUser
-                console.log(result)
-                resolve({ user,isNewUser, token });
+                resolve({ user, isNewUser, token });
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
@@ -37,7 +36,7 @@ export const LoginWithGoogle = async () => {
 export const Logout = async () => {
     await auth().signOut()
         .then(() => {
-            console.log("Salio exitosamente")
+            alert('Salió exitosamente. Vuelve pronto')
         }).catch((error) => {
             console.log(error)
         });
